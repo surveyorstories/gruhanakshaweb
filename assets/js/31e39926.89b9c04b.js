@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkgruhanakshaweb=self.webpackChunkgruhanakshaweb||[]).push([[1041],{2494:a=>{a.exports=JSON.parse('{"tags":[{"label":"Hola","permalink":"/gruhanakshaweb/blog/tags/hola","description":"Hola tag description","count":1},{"label":"Docusaurus","permalink":"/gruhanakshaweb/blog/tags/docusaurus","description":"Docusaurus tag description","count":1}]}')}}]);
