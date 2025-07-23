@@ -1,0 +1,90 @@
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Ensure cards take full width and auto adjust */
+    gap: 20px; /* Space between cards */
+    margin-top: 40px;
+    padding: 0 20px;
+    justify-content: space-between; /* Distribute cards across available width */
+    width: 100%; /* Ensure the grid takes up 100% of the available width */
+    box-sizing: border-box;
+  }
+  
+  .feature-card {
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    width: 100%; /* Ensure card takes up full width of its container */
+  }
+  
+  .feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  }
+  
+  .feature-card-icon {
+    font-size: 40px;
+    color: #5f5f5f;
+    margin-bottom: 20px;
+    transition: color 0.3s ease;
+  }
+  
+  .feature-card-icon:hover {
+    color: #4e92ff; /* Add hover effect on the icon */
+  }
+  
+  .feature-card-title {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 15px;
+    transition: color 0.3s ease;
+  }
+  
+  .feature-card-title:hover {
+    color: #4e92ff; /* Title color change on hover */
+  }
+  
+  .feature-card-description {
+    font-size: 1rem;
+    color: #777;
+    line-height: 1.5;
+    margin-bottom: 20px;
+  }
+  
+  .feature-card-footer {
+    margin-top: auto;
+    font-size: 0.9rem;
+    color: #4e92ff;
+    font-weight: 500;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+  
+  .feature-card-footer:hover {
+    color: #2a67cc; /* Footer color change on hover */
+  }
+  
+  /* Optional: Media Query for Responsiveness */
+  @media (max-width: 768px) {
+    .feature-card {
+      padding: 20px;
+    }
+  
+    .features-grid {
+      gap: 15px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .features-grid {
+      padding: 0 10px;
+    }
+  }
+  
