@@ -1,8 +1,20 @@
-# 📘 Property Parcel Map Generator
+---
+sidebar_position: 5
 
-## 🧭 Overview
+keywords:
+  - ppm
+  - property parcel map
+  - gruhanaksha
 
-The **Svamitva PPM Tool** is a QGIS Processing Algorithm that automates the generation of parcel-wise Property Parcel Maps. It uses plot and built-up shapefiles to generate map-ready outputs with symbology, labels, and atlas setup.
+tags: [property parcel map, ppm, gruhanaksha]
+slug: propertyparcelmap
+---
+
+# 🗺️ Property Parcel Map Generator
+
+The **Property Parcel Map Generator** is a QGIS Processing Algorithm that automates the generation of parcel-wise Property Parcel Maps. It uses plot and built-up shapefiles to generate map-ready outputs with symbology, labels, and atlas setup.
+
+![PPM Tool Workflow](../img/ppm_generation.png)
 
 ## 📋 Prerequisites Before Running the Tool
 
@@ -77,9 +89,9 @@ Follow these steps to successfully use the **Svamitva PPM Generator**:
 
 4. From Plugin Menu:
 
-    ```
-    Plugins ▶ Gruhanaksha ▶ PPM Generation
-    ```
+   ```
+   Plugins ▶ Gruhanaksha ▶ PPM Generation
+   ```
 
 ### Step 3: Fill in the Parameters
 

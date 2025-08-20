@@ -1,6 +1,16 @@
-# 🧭 Master Panel
+---
+sidebar_position: 6
 
-## 📖 What is the Master Panel?
+keywords:
+  - masterpanel
+  - master panel
+  - gruhanaksha
+
+tags: [master panel,property parcel map, ppm, gruhanaksha]
+slug: masterpanel
+---
+
+# 🧭 Master Panel
 
 The **Master Panel** is a user-friendly form in QGIS designed to help you easily enter and manage administrative details such as:
 

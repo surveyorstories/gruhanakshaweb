@@ -7,21 +7,53 @@ const DynamicDownloadButton = () => {
   const [oldReleases, setOldReleases] = useState([]); // Store old releases
   const [loading, setLoading] = useState(true); // Track loading state
   const [error, setError] = useState(null); // Track error state
+  const [qgisPluginLink, setQgisPluginLink] = useState(""); // Store QGIS plugin download link
+  const [qgisVersion, setQgisVersion] = useState("1.0.0"); // Update this manually when new QGIS plugin version is released
 
   useEffect(() => {
     // Fetch all releases from GitHub
-    axios
-      .get("https://api.github.com/repos/surveyorstories/gruhanaksha/releases")
-      .then((response) => {
-        const releases = response.data;
+    const fetchGitHubReleases = axios.get("https://api.github.com/repos/surveyorstories/gruhanaksha/releases");
+
+    // Try to fetch QGIS plugin page to extract version info
+    const fetchQgisPluginVersion = async () => {
+      try {
+        // This approach tries to get the plugin info from QGIS repository
+        // Note: This might be blocked by CORS, so we have fallbacks
+        const response = await fetch("https://plugins.qgis.org/api/v1/plugins/gruhanaksha/");
+        const data = await response.json();
+        if (data && data.version) {
+          setQgisVersion(data.version);
+          setQgisPluginLink(`https://plugins.qgis.org/plugins/gruhanaksha/version/${data.version}/download/`);
+        } else {
+          // Fallback to hardcoded version if API doesn't work
+          setQgisPluginLink(`https://plugins.qgis.org/plugins/gruhanaksha/version/${qgisVersion}/download/`);
+        }
+      } catch (error) {
+        console.warn("Could not fetch QGIS plugin version, using fallback:", error);
+        // Fallback: Use GitHub release version or hardcoded version
+        setQgisPluginLink(`https://plugins.qgis.org/plugins/gruhanaksha/version/${qgisVersion}/download/`);
+      }
+    };
+
+    // Execute both requests
+    Promise.all([fetchGitHubReleases, fetchQgisPluginVersion()])
+      .then(([githubResponse]) => {
+        const releases = githubResponse.data;
         const latest = releases[0]; // First release is the latest one
         const latestAsset = latest.assets[0]; // Assuming the first asset is the one you want
+
         if (latestAsset) {
           setDownloadLink(latestAsset.browser_download_url);
           setLatestRelease({
             name: latest.name,
             version: latest.tag_name, // Version is typically the `tag_name`
           });
+
+          // If QGIS plugin link wasn't set by API, try using GitHub version
+          if (!qgisPluginLink) {
+            const cleanVersion = latest.tag_name.replace(/^v/, ''); // Remove 'v' prefix if exists
+            setQgisPluginLink(`https://plugins.qgis.org/plugins/gruhanaksha/version/${cleanVersion}/download/`);
+          }
         }
 
         // Exclude the latest release and get the next 3 releases
@@ -36,6 +68,8 @@ const DynamicDownloadButton = () => {
         setError("Error fetching release data.");
         setLoading(false); // Stop loading on error
         console.error("Error fetching release data:", error);
+        // Set fallback QGIS link even if GitHub fails
+        setQgisPluginLink(`https://plugins.qgis.org/plugins/gruhanaksha/version/${qgisVersion}/download/`);
       });
   }, []);
 
@@ -51,10 +85,30 @@ const DynamicDownloadButton = () => {
           ) : (
             <>
               {latestRelease && (
-                <a aria-label="Latest Release" href={downloadLink} download>
-                  Latest: {latestRelease.name}
-                  {/* ({latestRelease.version}) */}
-                </a>
+                <div className="latest-release-section">
+                  <a
+                    href={qgisPluginLink}
+                    download
+                    aria-label="Download from QGIS Plugin Repository"
+                  >
+                    Download from QGIS Plugins
+                  </a>
+
+                  <a
+                    href="https://plugins.qgis.org/plugins/gruhanaksha/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="QGIS Plugin Page"
+                  >
+                    QGIS Plugin Page
+                  </a>
+
+                  <a aria-label="Latest Release" href={downloadLink} download>
+                    Latest: {latestRelease.name}
+                    {/* ({latestRelease.version}) */}
+                  </a>
+
+                </div>
               )}
             </>
           )}

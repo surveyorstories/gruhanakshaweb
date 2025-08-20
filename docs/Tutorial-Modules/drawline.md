@@ -1,8 +1,20 @@
+---
+sidebar_position: 8
+
+keywords:
+  - ppm
+  - property parcel map
+  - gruhanaksha
+
+tags: [property parcel map, ppm, gruhanaksha]
+slug: drawline
+---
+
 # 🧭 Drawline Tool
 
-## 🗺️ Overview
+`deprecated:>v1.0.1`
 
-The **Baseline Tool** in QGIS allows users to create baseline geometries (📏 lines or 🟠 circles) based on a user-defined distance. This tool helps in digitizing and mapping linear and circular features with precision.
+The **Drawline** in QGIS allows users to create baseline geometries (📏 lines or 🟠 circles) based on a user-defined distance. This tool helps in digitizing and mapping linear and circular features with precision.
 
 ## ✨ Features
 
@@ -43,9 +55,9 @@ The **Baseline Tool** in QGIS allows users to create baseline geometries (📏 l
 2. Select the desired **unit of measurement** 📏.
 
 3. Choose the **geometry type**:
-   
+
    - 📏 **Line**: A straight segment of the specified distance.
-   
+
    - 🟠 **Circle**: A circular feature with the given radius.
 
 4. Click **OK** ✅ to confirm.

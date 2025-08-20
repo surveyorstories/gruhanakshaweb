@@ -1,51 +1,63 @@
-# 🧭 Plotter Widget - User Guide
+---
+sidebar_position: 3
+
+keywords:
+  - plotter widget
+  - polygon adjuster
+  - gruhanaksha
+
+tags: [plotterwidget,plotter, fmb, offset]
+slug: plotterwidget
+---
+
+# 🧭 Plotter Widget
 
 The **Plotter Widget** is a PyQt5-based graphical interface integrated into QGIS that enables users to **plot calculated points** like cut points, offset points, and extended points along a selected line feature. 🎯 This tool is especially valuable for **precision mapping** and **SVAMITVA survey workflows** requiring accurate line-based geometry operations.
 
 ## 🔧 **Key Features**
 
 1. **📏 Unit Conversion**
-   
+
    - Meters
-   
+
    - Metric Links (1 = 0.2 meters)
-   
+
    - Gunter’s Links (1 = 0.201168 meters)
 
 2. **📌 Base Point Selection**
-   
+
    - Start Point
-   
+
    - End Point
 
 3. **📐 Point Types**
-   
+
    - **Cut Point**: At a given length along the line.
-   
+
    - **Offset Point**: Perpendicular to the line at a given distance.
-   
+
    - **Extended Point**: When the length exceeds the original line.
 
 4. **🗂️ Memory Layer Integration**
-   
+
    - Outputs are saved as a new memory layer.
-   
+
    - Works with both single-part and multi-part lines.
 
 5. **🎨 Categorized Symbology**
-   
+
    - Green: Start Point
-   
+
    - Red: End Point
-   
+
    - Orange: Cut Point
-   
+
    - Blue: Offset Point
-   
+
    - Purple: Extended Point
 
 6. **🛡️ Robust Error Handling**
-   
+
    - Clear messages guide users to correct inputs.
 
 ## 🚀 **How to Use the Plotter Widget**

@@ -5,7 +5,7 @@ keywords:
   - tool set
   - tool panel
 
-tags: [toolset,toolpanel]
+tags: [toolset,toolpanel,tools]
 slug: toolset
 ---
 
@@ -14,11 +14,11 @@ slug: toolset
 The **Tool Panel** is a floating window inside QGIS that gives access to multiple custom tools, useful for working with land parcels, base lines, and plotting boundaries. It includes buttons for:
 ![tool_set](../img/tools.png)
 
-- **[DrawLine](./drawline)** – For drawing base lines and circles.
+- **[DrawLine](./drawline)** – For drawing base lines and circles. `deprecated:>v1.0.1`
 
-- **[Plotter](./fmb)** – For visualizing and plotting triangles, bisectors, and angle tools.
+- **[Plotter](./plotterwidget)** – For visualizing and plotting triangles, bisectors, and angle tools.
 
-- **[Adjuster](./polygon_adjuster)** – For adjusting polygon areas or shapes interactively.
+- **[Adjuster](./polygonadjuster)** – For adjusting polygon areas or shapes interactively.
 
 ## 🧭 Opening the Tool Panel
 
@@ -33,6 +33,8 @@ The panel appears with the title: **“Tool Panel”** and includes three button
 ## 🧩 Buttons in the Tool Panel
 
 ### 1. 🔷 **DrawLine**
+
+`deprecated:>v1.0.1`
 
 - **Icon:** ![DrawLine](../img/baseline.png)
 
@@ -52,7 +54,7 @@ The panel appears with the title: **“Tool Panel”** and includes three button
 - **Icon:** ![Plotter](../img/plotter.png)
 
 - **Use this to:**  
-  Open the **[Combined Plotter Tool](./fmb)**, which supports triangle plotting, angle bisectors, and more.
+  Open the **[Combined Plotter Tool](./plotterwidget)**, which supports triangle plotting, angle bisectors, and more.
 
 - **Requirements:**  
   You must select **one line feature** from a line layer.
@@ -68,7 +70,7 @@ The panel appears with the title: **“Tool Panel”** and includes three button
 - **Icon:** ![Adjuster](../img/adjuster.png)
 
 - **Use this to:**  
-  Open the **[Polygon Adjuster Tool](./polygon_adjuster)**, which helps resize or reshape polygon areas.
+  Open the **[Polygon Adjuster Tool](./polygonadjuster)**, which helps resize or reshape polygon areas.
 
 - **Example:**  
   Increase the area of a plot while maintaining its general shape.

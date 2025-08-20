@@ -1,3 +1,15 @@
+---
+sidebar_position: 4
+
+keywords:
+  - plotter widget
+  - polygon adjuster
+  - gruhanaksha
+
+tags: [plotterwidget,polygonadjuster]
+slug: polygonadjuster
+---
+
 # 🛠️ Polygon Adjuster Editing Tool
 
 This tool allows you to easily **move polygon vertices** or **adjust side lengths** directly on your QGIS map using a guided, click-based process. It's designed for simplicity, precision, and clarity.
@@ -41,12 +53,13 @@ A message will appear:
 - A message appears:
   
   > “Polygon selected. Now click a vertex of this polygon.”
+
 - Shows the lengths of all sides of the polygon
 
 - If nothing happens:
-
+  
   - Ensure you're clicking on a polygon from an **editable layer**.
-
+  
   - Make sure the layer is in **editing mode** (pencil icon enabled).
   
   - Zoom in to the polygon and left-click inside its boundary to select it.
