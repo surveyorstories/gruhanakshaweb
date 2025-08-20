@@ -1,0 +1,396 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-Tutorial-Modules/atlas_export" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.8.1">
+<title data-rh="true">🌏Atlas Export Tool | Gruhanaksha</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://surveyorstories.github.io/gruhanakshaweb/img/logo_light.png"><meta data-rh="true" name="twitter:image" content="https://surveyorstories.github.io/gruhanakshaweb/img/logo_light.png"><meta data-rh="true" property="og:url" content="https://surveyorstories.github.io/gruhanakshaweb/docs/Tutorial-Modules/atlasexport"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="🌏Atlas Export Tool | Gruhanaksha"><meta data-rh="true" name="description" content="Available from v1.0.1"><meta data-rh="true" property="og:description" content="Available from v1.0.1"><meta data-rh="true" name="keywords" content="ppm,property parcel map,gruhanaksha"><link data-rh="true" rel="icon" href="/gruhanakshaweb/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://surveyorstories.github.io/gruhanakshaweb/docs/Tutorial-Modules/atlasexport"><link data-rh="true" rel="alternate" href="https://surveyorstories.github.io/gruhanakshaweb/docs/Tutorial-Modules/atlasexport" hreflang="en"><link data-rh="true" rel="alternate" href="https://surveyorstories.github.io/gruhanakshaweb/docs/Tutorial-Modules/atlasexport" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Tutorial: Modules","item":"https://surveyorstories.github.io/gruhanakshaweb/docs/category/tutorial-modules"},{"@type":"ListItem","position":2,"name":"🌏Atlas Export Tool","item":"https://surveyorstories.github.io/gruhanakshaweb/docs/Tutorial-Modules/atlasexport"}]}</script><link rel="alternate" type="application/rss+xml" href="/gruhanakshaweb/blog/rss.xml" title="Gruhanaksha RSS Feed">
+<link rel="alternate" type="application/atom+xml" href="/gruhanakshaweb/blog/atom.xml" title="Gruhanaksha Atom Feed">
+
+<link rel="preconnect" href="https://www.google-analytics.com">
+<link rel="preconnect" href="https://www.googletagmanager.com">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JXGYS5GKJV"></script>
+<script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","G-JXGYS5GKJV",{anonymize_ip:!0})</script>
+
+
+
+<link rel="preconnect" href="https://us.i.posthog.com">
+<script>!function(t,e){var o,s,r,a;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,p,n){function c(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(r=t.createElement("script")).type="text/javascript",r.async=!0,r.src=p.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(a=t.getElementsByTagName("script")[0]).parentNode.insertBefore(r,a);var g=e;for(void 0!==n?g=e[n]=[]:n="posthog",g.people=g.people||[],g.toString=function(t){var e="posthog";return"posthog"!==n&&(e+="."+n),t||(e+=" (stub)"),e},g.people.toString=function(){return g.toString(1)+".people (stub)"},o="capture identify alias people.set people.set_once set_config register register_once unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset isFeatureEnabled onFeatureFlags getFeatureFlag getFeatureFlagPayload reloadFeatureFlags group updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures getActiveMatchingSurveys getSurveys onSessionId".split(" "),s=0;s<o.length;s++)c(g,o[s]);e._i.push([i,p,n])},e.__SV=1)}(document,window.posthog||[]),posthog.init("phc_tGkbGrEgfIUH1Cz0NtJbFEVfizpQcUoGCJzAyuepR1a",{api_host:"https://us.i.posthog.com",id:"default"})</script><link rel="stylesheet" href="/gruhanakshaweb/assets/css/styles.fb72658b.css">
+<script src="/gruhanakshaweb/assets/js/runtime~main.03e612ac.js" defer="defer"></script>
+<script src="/gruhanakshaweb/assets/js/main.4e41e9cd.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t="light";var e=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",e||t),document.documentElement.setAttribute("data-theme-choice",e||t)}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/gruhanakshaweb/img/logo_light.svg"><link rel="preload" as="image" href="/gruhanakshaweb/img/logo_dark.svg"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/gruhanakshaweb/"><div class="navbar__logo"><img src="/gruhanakshaweb/img/logo_light.svg" alt="Surveyor stories" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/gruhanakshaweb/img/logo_dark.svg" alt="Surveyor stories" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">Surveyor stories</b></a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><div class="navbarSearchContainer_Bca1"><div class="navbar__search searchBarContainer_NW3z" dir="ltr"><input placeholder="Search" aria-label="Search" class="navbar__search-input searchInput_YFbd" value=""><div class="loadingRing_RJI3 searchBarLoadingRing_YnHq"><div></div><div></div><div></div><div></div></div></div></div><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/gruhanakshaweb/docs">Tutorial</a><a href="https://github.com/surveyorstories/gruhanakshaweb" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-hidden="true" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/gruhanakshaweb/docs">Welcome</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/gruhanakshaweb/docs/nextsteps">Next Steps</a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--active" href="/gruhanakshaweb/docs/category/tutorial-modules">Tutorial: Modules</a><button aria-label="Collapse sidebar category &#x27;Tutorial: Modules&#x27;" aria-expanded="true" type="button" class="clean-btn menu__caret"></button></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/gruhanakshaweb/docs/Tutorial-Modules/toolset">🛠️ Tool Panel</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/gruhanakshaweb/docs/Tutorial-Modules/advancedline">📐 Advanced Line</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/gruhanakshaweb/docs/Tutorial-Modules/plotterwidget">🧭 Plotter Widget</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/gruhanakshaweb/docs/Tutorial-Modules/polygonadjuster">🛠️ Polygon Adjuster Editing Tool</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/gruhanakshaweb/docs/Tutorial-Modules/propertyparcelmap">🗺️ Property Parcel Map Generator</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/gruhanakshaweb/docs/Tutorial-Modules/masterpanel">🧭 Master Panel</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/gruhanakshaweb/docs/Tutorial-Modules/atlasexport">🌏Atlas Export Tool</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/gruhanakshaweb/docs/Tutorial-Modules/drawline">🧭 Drawline Tool</a></li></ul></li></ul></nav><button type="button" title="Collapse sidebar" aria-label="Collapse sidebar" class="button button--secondary button--outline collapseSidebarButton_PEFL"><svg width="20" height="20" aria-hidden="true" class="collapseSidebarButtonIcon_kv0_"><g fill="#7a7a7a"><path d="M9.992 10.023c0 .2-.062.399-.172.547l-4.996 7.492a.982.982 0 01-.828.454H1c-.55 0-1-.453-1-1 0-.2.059-.403.168-.551l4.629-6.942L.168 3.078A.939.939 0 010 2.528c0-.548.45-.997 1-.997h2.996c.352 0 .649.18.828.45L9.82 9.472c.11.148.172.347.172.55zm0 0"></path><path d="M19.98 10.023c0 .2-.058.399-.168.547l-4.996 7.492a.987.987 0 01-.828.454h-3c-.547 0-.996-.453-.996-1 0-.2.059-.403.168-.551l4.625-6.942-4.625-6.945a.939.939 0 01-.168-.55 1 1 0 01.996-.997h3c.348 0 .649.18.828.45l4.996 7.492c.11.148.168.347.168.55zm0 0"></path></g></svg></button></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/gruhanakshaweb/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><a class="breadcrumbs__link" href="/gruhanakshaweb/docs/category/tutorial-modules"><span>Tutorial: Modules</span></a></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">🌏Atlas Export Tool</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>🌏Atlas Export Tool</h1></header>
+<p><code>Available from v1.0.1</code></p>
+<p>The Enhanced Atlas Export Tool allows you to export print layouts and atlas pages in various formats with advanced customization options. Whether you&#x27;re creating a single map or hundreds of atlas pages, this tool streamlines the export process with an intuitive interface and robust error handling.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="-key-features">✨ Key Features<a href="#-key-features" class="hash-link" aria-label="Direct link to ✨ Key Features" title="Direct link to ✨ Key Features">​</a></h3>
+<ul>
+<li>🎯 Support for both atlas and single layout exports</li>
+<li>📁 Multiple export formats (PDF, PNG, JPG, TIFF, SVG)</li>
+<li>🔧 Advanced quality and compression settings</li>
+<li>👀 Live preview capabilities</li>
+<li>📊 Comprehensive export logging</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="-getting-started">🚀 Getting Started<a href="#-getting-started" class="hash-link" aria-label="Direct link to 🚀 Getting Started" title="Direct link to 🚀 Getting Started">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="prerequisites">Prerequisites<a href="#prerequisites" class="hash-link" aria-label="Direct link to Prerequisites" title="Direct link to Prerequisites">​</a></h3>
+<ul>
+<li>✅ QGIS 3.x installed</li>
+<li>✅ At least one print layout created in your project</li>
+<li>✅ For atlas exports: coverage layer configured</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="launching-the-tool">Launching the Tool<a href="#launching-the-tool" class="hash-link" aria-label="Direct link to Launching the Tool" title="Direct link to Launching the Tool">​</a></h3>
+<ol>
+<li>📂 Open your QGIS project</li>
+<li>🖱️ Click on the Atlas Export icon or  Plugins ▶ Gruhanaksha ▶ Atlas Export</li>
+</ol>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="️-interface-layout">🖥️ Interface Layout<a href="#️-interface-layout" class="hash-link" aria-label="Direct link to 🖥️ Interface Layout" title="Direct link to 🖥️ Interface Layout">​</a></h2>
+<p>The tool features a split-panel interface:</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="left-panel-settings--configuration-️">Left Panel: Settings &amp; Configuration ⚙️<a href="#left-panel-settings--configuration-️" class="hash-link" aria-label="Direct link to Left Panel: Settings &amp; Configuration ⚙️" title="Direct link to Left Panel: Settings &amp; Configuration ⚙️">​</a></h3>
+<ul>
+<li><strong>Layout Selection</strong> - Choose your print layout</li>
+<li><strong>Export Mode</strong> - Select export type (all, custom, single)</li>
+<li><strong>Output Settings</strong> - Configure directory and filenames</li>
+<li><strong>Quality Settings</strong> - Adjust DPI, compression, and size</li>
+<li><strong>Advanced Options</strong> - Vector settings, text rendering</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="right-panel-preview--logging-">Right Panel: Preview &amp; Logging 📊<a href="#right-panel-preview--logging-" class="hash-link" aria-label="Direct link to Right Panel: Preview &amp; Logging 📊" title="Direct link to Right Panel: Preview &amp; Logging 📊">​</a></h3>
+<ul>
+<li><strong>Layout Preview</strong> - Visual preview of selected page</li>
+<li><strong>Preview Information</strong> - Detailed layout and feature data</li>
+<li><strong>Export Log</strong> - Real-time export progress and messages</li>
+</ul>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="-layout-selection">🎯 Layout Selection<a href="#-layout-selection" class="hash-link" aria-label="Direct link to 🎯 Layout Selection" title="Direct link to 🎯 Layout Selection">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="-selecting-a-layout">📋 Selecting a Layout<a href="#-selecting-a-layout" class="hash-link" aria-label="Direct link to 📋 Selecting a Layout" title="Direct link to 📋 Selecting a Layout">​</a></h3>
+<ol>
+<li>
+<p><strong>Print Layout Dropdown</strong> 📝</p>
+<ul>
+<li>Lists all available print layouts in your project</li>
+<li>Shows &quot;No layouts available&quot; if none exist</li>
+</ul>
+</li>
+<li>
+<p><strong>Atlas Status Display</strong> 🗺️</p>
+<ul>
+<li>Shows current atlas configuration state</li>
+<li>Indicates coverage layer and feature count</li>
+</ul>
+</li>
+<li>
+<p><strong>Enable/Disable Atlas</strong> 🔘</p>
+<ul>
+<li>Toggle atlas functionality on/off</li>
+<li>Only visible when coverage layer is configured</li>
+</ul>
+</li>
+</ol>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="atlas-status-messages">Atlas Status Messages<a href="#atlas-status-messages" class="hash-link" aria-label="Direct link to Atlas Status Messages" title="Direct link to Atlas Status Messages">​</a></h3>
+<ul>
+<li>✅ <strong>&quot;Atlas: Enabled (X features from &#x27;LayerName&#x27;)&quot;</strong> - Ready for export</li>
+<li>⚠️ <strong>&quot;Atlas: Configured but not enabled&quot;</strong> - Click &quot;Enable Atlas&quot;</li>
+<li>❌ <strong>&quot;Atlas: Enabled but no coverage layer set&quot;</strong> - Configure coverage layer</li>
+<li>📄 <strong>&quot;Regular Layout: No atlas configuration&quot;</strong> - Single page layout</li>
+</ul>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="-export-modes">🎨 Export Modes<a href="#-export-modes" class="hash-link" aria-label="Direct link to 🎨 Export Modes" title="Direct link to 🎨 Export Modes">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="-single-layout-export">📑 Single Layout Export<a href="#-single-layout-export" class="hash-link" aria-label="Direct link to 📑 Single Layout Export" title="Direct link to 📑 Single Layout Export">​</a></h3>
+<ul>
+<li><strong>Use Case</strong>: Export one page from a regular (non-atlas) layout</li>
+<li><strong>Button</strong>: &quot;Export Single Layout&quot;</li>
+<li><strong>Output</strong>: One file per layout</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="️-export-all-atlas-pages">🗂️ Export All Atlas Pages<a href="#️-export-all-atlas-pages" class="hash-link" aria-label="Direct link to 🗂️ Export All Atlas Pages" title="Direct link to 🗂️ Export All Atlas Pages">​</a></h3>
+<ul>
+<li><strong>Use Case</strong>: Export every page in the atlas</li>
+<li><strong>Button</strong>: &quot;Export All Pages&quot;</li>
+<li><strong>Output</strong>: One file per atlas feature</li>
+<li><strong>Note</strong>: Only available for atlas-enabled layouts</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="-export-custom-atlas-pages">🎯 Export Custom Atlas Pages<a href="#-export-custom-atlas-pages" class="hash-link" aria-label="Direct link to 🎯 Export Custom Atlas Pages" title="Direct link to 🎯 Export Custom Atlas Pages">​</a></h3>
+<ul>
+<li><strong>Use Case</strong>: Export specific pages from atlas</li>
+<li><strong>Button</strong>: &quot;Export Custom Pages&quot;</li>
+<li><strong>Input Format</strong>:<!-- -->
+<ul>
+<li>Single pages: <code>1,3,5</code></li>
+<li>Ranges: <code>1-5,8,10-12</code></li>
+<li>Mixed: <code>1,3,5-8,12,15-20</code></li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="-disabled-options">🚫 Disabled Options<a href="#-disabled-options" class="hash-link" aria-label="Direct link to 🚫 Disabled Options" title="Direct link to 🚫 Disabled Options">​</a></h3>
+<ul>
+<li>Single page export is automatically disabled for atlas layouts</li>
+<li>Atlas options are disabled for regular layouts</li>
+</ul>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="-output-settings">📁 Output Settings<a href="#-output-settings" class="hash-link" aria-label="Direct link to 📁 Output Settings" title="Direct link to 📁 Output Settings">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="️-output-directory">🗂️ Output Directory<a href="#️-output-directory" class="hash-link" aria-label="Direct link to 🗂️ Output Directory" title="Direct link to 🗂️ Output Directory">​</a></h3>
+<ul>
+<li><strong>Browse Button</strong> 📂: Select destination folder</li>
+<li><strong>Path Display</strong>: Shows selected directory path</li>
+<li><strong>Auto-creation</strong>: Directory created automatically if it doesn&#x27;t exist</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="-filename-pattern">📝 Filename Pattern<a href="#-filename-pattern" class="hash-link" aria-label="Direct link to 📝 Filename Pattern" title="Direct link to 📝 Filename Pattern">​</a></h3>
+<p>Configure output filenames using placeholders:</p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="standard-placeholders">Standard Placeholders<a href="#standard-placeholders" class="hash-link" aria-label="Direct link to Standard Placeholders" title="Direct link to Standard Placeholders">​</a></h4>
+<ul>
+<li><code>{page}</code> - Page number (001, 002, 003...)</li>
+<li><code>{index}</code> - Zero-based index (0, 1, 2...)</li>
+</ul>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="atlas-specific-placeholders">Atlas-Specific Placeholders<a href="#atlas-specific-placeholders" class="hash-link" aria-label="Direct link to Atlas-Specific Placeholders" title="Direct link to Atlas-Specific Placeholders">​</a></h4>
+<ul>
+<li><code>{field_name}</code> - Value from coverage layer field</li>
+<li>Example: <code>{NAME}</code>, <code>{ID}</code>, <code>{REGION}</code></li>
+</ul>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="example-patterns">Example Patterns<a href="#example-patterns" class="hash-link" aria-label="Direct link to Example Patterns" title="Direct link to Example Patterns">​</a></h4>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">atlas_{page}           → atlas_001.pdf, atlas_002.pdf</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">map_{NAME}_{page}      → map_London_001.pdf, map_Paris_002.pdf</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">export_{ID}_{index}    → export_12_0.pdf, export_15_1.pdf</span><br></span></code></pre></div></div>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="-export-format">📄 Export Format<a href="#-export-format" class="hash-link" aria-label="Direct link to 📄 Export Format" title="Direct link to 📄 Export Format">​</a></h3>
+<p>Choose from five formats:</p>
+<table><thead><tr><th>Format</th><th>Best For</th><th>Vector Support</th><th>Transparency</th></tr></thead><tbody><tr><td><strong>PDF</strong> 📄</td><td>Professional printing</td><td>✅ Yes</td><td>❌ No</td></tr><tr><td><strong>PNG</strong> 🖼️</td><td>Web use, transparency</td><td>❌ No</td><td>✅ Yes</td></tr><tr><td><strong>JPG</strong> 📷</td><td>Photos, smaller files</td><td>❌ No</td><td>❌ No</td></tr><tr><td><strong>TIFF</strong> 🗃️</td><td>GIS applications</td><td>❌ No</td><td>✅ Yes</td></tr><tr><td><strong>SVG</strong> 🎨</td><td>Scalable graphics</td><td>✅ Yes</td><td>✅ Yes</td></tr></tbody></table>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="-quality-settings">⚡ Quality Settings<a href="#-quality-settings" class="hash-link" aria-label="Direct link to ⚡ Quality Settings" title="Direct link to ⚡ Quality Settings">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="-dpi-dots-per-inch">🎯 DPI (Dots Per Inch)<a href="#-dpi-dots-per-inch" class="hash-link" aria-label="Direct link to 🎯 DPI (Dots Per Inch)" title="Direct link to 🎯 DPI (Dots Per Inch)">​</a></h3>
+<ul>
+<li><strong>Range</strong>: 72-1200 DPI</li>
+<li><strong>Default</strong>: 300 DPI</li>
+<li><strong>Recommendations</strong>:<!-- -->
+<ul>
+<li>📱 Screen: 72-96 DPI</li>
+<li>🖨️ Print: 300 DPI</li>
+<li>📊 High-quality: 600+ DPI</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="-image-quality-jpg-only">🎨 Image Quality (JPG only)<a href="#-image-quality-jpg-only" class="hash-link" aria-label="Direct link to 🎨 Image Quality (JPG only)" title="Direct link to 🎨 Image Quality (JPG only)">​</a></h3>
+<ul>
+<li><strong>Range</strong>: 1-100%</li>
+<li><strong>Default</strong>: 95%</li>
+<li><strong>Slider Control</strong>: Real-time percentage display</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="-custom-dimensions">📐 Custom Dimensions<a href="#-custom-dimensions" class="hash-link" aria-label="Direct link to 📐 Custom Dimensions" title="Direct link to 📐 Custom Dimensions">​</a></h3>
+<ul>
+<li><strong>Width/Height</strong>: Set custom pixel dimensions</li>
+<li><strong>Auto Mode</strong>: Leave at 0 for automatic sizing</li>
+<li><strong>Aspect Ratio</strong>: Maintains proportions when one dimension is set</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="️-compression-settings">🗜️ Compression Settings<a href="#️-compression-settings" class="hash-link" aria-label="Direct link to 🗜️ Compression Settings" title="Direct link to 🗜️ Compression Settings">​</a></h3>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="pngtiff-compression">PNG/TIFF Compression<a href="#pngtiff-compression" class="hash-link" aria-label="Direct link to PNG/TIFF Compression" title="Direct link to PNG/TIFF Compression">​</a></h4>
+<ul>
+<li><strong>Range</strong>: 0-9 (0=none, 9=maximum)</li>
+<li><strong>Default</strong>: 6</li>
+<li><strong>Trade-off</strong>: Higher compression = smaller files, slower processing</li>
+</ul>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="-advanced-options">🔧 Advanced Options<a href="#-advanced-options" class="hash-link" aria-label="Direct link to 🔧 Advanced Options" title="Direct link to 🔧 Advanced Options">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="-metadata-options">📊 Metadata Options<a href="#-metadata-options" class="hash-link" aria-label="Direct link to 📊 Metadata Options" title="Direct link to 📊 Metadata Options">​</a></h3>
+<ul>
+<li>✅ <strong>Include Metadata</strong>: Embed creation info, timestamps</li>
+<li>📁 <strong>Create Subdirectories</strong>: Organize exports into folders</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="-vector-vs-raster-pdfsvg">🎨 Vector vs Raster (PDF/SVG)<a href="#-vector-vs-raster-pdfsvg" class="hash-link" aria-label="Direct link to 🎨 Vector vs Raster (PDF/SVG)" title="Direct link to 🎨 Vector vs Raster (PDF/SVG)">​</a></h3>
+<p>Two mutually exclusive options:</p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="export-as-vectors--recommended">Export as Vectors ✅ (Recommended)<a href="#export-as-vectors--recommended" class="hash-link" aria-label="Direct link to Export as Vectors ✅ (Recommended)" title="Direct link to Export as Vectors ✅ (Recommended)">​</a></h4>
+<ul>
+<li><strong>Benefits</strong>: Crisp text, scalable graphics, smaller files</li>
+<li><strong>Best for</strong>: Maps with text labels, simple geometries</li>
+</ul>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="rasterize-whole-layout-️">Rasterize Whole Layout 🖼️<a href="#rasterize-whole-layout-️" class="hash-link" aria-label="Direct link to Rasterize Whole Layout 🖼️" title="Direct link to Rasterize Whole Layout 🖼️">​</a></h4>
+<ul>
+<li><strong>Benefits</strong>: Consistent appearance, complex effects</li>
+<li><strong>Best for</strong>: Layouts with complex styling, raster backgrounds</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="-text-rendering-pdfsvg">📝 Text Rendering (PDF/SVG)<a href="#-text-rendering-pdfsvg" class="hash-link" aria-label="Direct link to 📝 Text Rendering (PDF/SVG)" title="Direct link to 📝 Text Rendering (PDF/SVG)">​</a></h3>
+<ul>
+<li><strong>Always Outlines</strong> 🔤: Convert text to vector paths (reliable)</li>
+<li><strong>Always Text</strong> 📋: Keep text as selectable text (smaller files)</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="️-pdf-specific-options">🗜️ PDF-Specific Options<a href="#️-pdf-specific-options" class="hash-link" aria-label="Direct link to 🗜️ PDF-Specific Options" title="Direct link to 🗜️ PDF-Specific Options">​</a></h3>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="image-compression">Image Compression<a href="#image-compression" class="hash-link" aria-label="Direct link to Image Compression" title="Direct link to Image Compression">​</a></h4>
+<ul>
+<li><strong>Lossless/None</strong>: No compression, larger files</li>
+<li><strong>Lossy (JPEG)</strong>: Compressed images, smaller files</li>
+</ul>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="jpeg-quality-when-lossy-selected">JPEG Quality (when Lossy selected)<a href="#jpeg-quality-when-lossy-selected" class="hash-link" aria-label="Direct link to JPEG Quality (when Lossy selected)" title="Direct link to JPEG Quality (when Lossy selected)">​</a></h4>
+<ul>
+<li><strong>Range</strong>: 1-100%</li>
+<li><strong>Default</strong>: 90%</li>
+<li><strong>Applies to</strong>: Raster images embedded in PDF</li>
+</ul>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="️-preview-features">👁️ Preview Features<a href="#️-preview-features" class="hash-link" aria-label="Direct link to 👁️ Preview Features" title="Direct link to 👁️ Preview Features">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="-preview-controls">🔍 Preview Controls<a href="#-preview-controls" class="hash-link" aria-label="Direct link to 🔍 Preview Controls" title="Direct link to 🔍 Preview Controls">​</a></h3>
+<ul>
+<li><strong>Enable Preview Rendering</strong> ☑️: Toggle visual preview on/off</li>
+<li><strong>Page Selector</strong> 🔢: Choose which atlas page to preview</li>
+<li><strong>Refresh Button</strong> 🔄: Update preview manually</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="-preview-information">📊 Preview Information<a href="#-preview-information" class="hash-link" aria-label="Direct link to 📊 Preview Information" title="Direct link to 📊 Preview Information">​</a></h3>
+<p>Always visible text panel showing:</p>
+<ul>
+<li>Layout name and type</li>
+<li>Atlas configuration status</li>
+<li>Feature count and coverage layer</li>
+<li>Current page attributes</li>
+<li>Export settings summary</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="️-visual-preview">🖼️ Visual Preview<a href="#️-visual-preview" class="hash-link" aria-label="Direct link to 🖼️ Visual Preview" title="Direct link to 🖼️ Visual Preview">​</a></h3>
+<p>When enabled, shows:</p>
+<ul>
+<li>Actual rendered layout/atlas page</li>
+<li>Scaled to fit preview area</li>
+<li>Error messages if rendering fails</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="-preview-tips">💡 Preview Tips<a href="#-preview-tips" class="hash-link" aria-label="Direct link to 💡 Preview Tips" title="Direct link to 💡 Preview Tips">​</a></h3>
+<ul>
+<li>🚀 Disable visual preview for faster performance</li>
+<li>📋 Text info updates automatically</li>
+<li>🔄 Use refresh if preview seems outdated</li>
+</ul>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="️-export-process">▶️ Export Process<a href="#️-export-process" class="hash-link" aria-label="Direct link to ▶️ Export Process" title="Direct link to ▶️ Export Process">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="-starting-export">🎬 Starting Export<a href="#-starting-export" class="hash-link" aria-label="Direct link to 🎬 Starting Export" title="Direct link to 🎬 Starting Export">​</a></h3>
+<ol>
+<li>✅ Configure all settings</li>
+<li>👀 Use &quot;Preview&quot; to verify settings</li>
+<li>▶️ Click &quot;Export&quot; to begin</li>
+<li>📊 Monitor progress bar and log</li>
+</ol>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="-progress-monitoring">📊 Progress Monitoring<a href="#-progress-monitoring" class="hash-link" aria-label="Direct link to 📊 Progress Monitoring" title="Direct link to 📊 Progress Monitoring">​</a></h3>
+<ul>
+<li><strong>Progress Bar</strong> 📈: Shows completion percentage</li>
+<li><strong>Export Log</strong> 📝: Detailed messages and file names</li>
+<li><strong>Page Counter</strong> 🔢: &quot;Exported X/Y pages&quot;</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="️-cancelling-export">⏹️ Cancelling Export<a href="#️-cancelling-export" class="hash-link" aria-label="Direct link to ⏹️ Cancelling Export" title="Direct link to ⏹️ Cancelling Export">​</a></h3>
+<ul>
+<li>🛑 Click &quot;Cancel&quot; button during export</li>
+<li>🕐 Wait for current page to finish</li>
+<li>📄 Partially exported files are preserved</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="-completion-messages">✅ Completion Messages<a href="#-completion-messages" class="hash-link" aria-label="Direct link to ✅ Completion Messages" title="Direct link to ✅ Completion Messages">​</a></h3>
+<ul>
+<li>✅ <strong>Success</strong>: &quot;Successfully exported X pages&quot;</li>
+<li>❌ <strong>Error</strong>: Specific error message with details</li>
+<li>⏹️ <strong>Cancelled</strong>: &quot;Export cancelled. XX pages exported&quot;</li>
+</ul>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="-troubleshooting">🔧 Troubleshooting<a href="#-troubleshooting" class="hash-link" aria-label="Direct link to 🔧 Troubleshooting" title="Direct link to 🔧 Troubleshooting">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="-common-issues">❌ Common Issues<a href="#-common-issues" class="hash-link" aria-label="Direct link to ❌ Common Issues" title="Direct link to ❌ Common Issues">​</a></h3>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="no-layouts-available">&quot;No layouts available&quot;<a href="#no-layouts-available" class="hash-link" aria-label="Direct link to &quot;No layouts available&quot;" title="Direct link to &quot;No layouts available&quot;">​</a></h4>
+<p><strong>Cause</strong>: No print layouts in project <strong>Solution</strong>:</p>
+<ol>
+<li>📋 Create a print layout in QGIS</li>
+<li>🔄 Refresh the tool</li>
+</ol>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="atlas-not-enabled">&quot;Atlas not enabled&quot;<a href="#atlas-not-enabled" class="hash-link" aria-label="Direct link to &quot;Atlas not enabled&quot;" title="Direct link to &quot;Atlas not enabled&quot;">​</a></h4>
+<p><strong>Cause</strong>: Atlas is configured but disabled <strong>Solution</strong>:</p>
+<ol>
+<li>🔘 Click &quot;Enable Atlas&quot; button</li>
+<li>✅ Verify coverage layer is valid</li>
+</ol>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="no-coverage-layer-configured">&quot;No coverage layer configured&quot;<a href="#no-coverage-layer-configured" class="hash-link" aria-label="Direct link to &quot;No coverage layer configured&quot;" title="Direct link to &quot;No coverage layer configured&quot;">​</a></h4>
+<p><strong>Cause</strong>: Atlas enabled without coverage layer <strong>Solution</strong>:</p>
+<ol>
+<li>🗺️ Open layout properties in QGIS</li>
+<li>📍 Set coverage layer in Atlas tab</li>
+</ol>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="export-fails-immediately">Export fails immediately<a href="#export-fails-immediately" class="hash-link" aria-label="Direct link to Export fails immediately" title="Direct link to Export fails immediately">​</a></h4>
+<p><strong>Causes &amp; Solutions</strong>:</p>
+<ul>
+<li>📁 <strong>Invalid output directory</strong>: Check folder permissions</li>
+<li>💾 <strong>Disk space</strong>: Ensure sufficient storage</li>
+<li>🔒 <strong>File locks</strong>: Close files that might be open</li>
+</ul>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="preview-shows-error">Preview shows &quot;error&quot;<a href="#preview-shows-error" class="hash-link" aria-label="Direct link to Preview shows &quot;error&quot;" title="Direct link to Preview shows &quot;error&quot;">​</a></h4>
+<p><strong>Causes &amp; Solutions</strong>:</p>
+<ul>
+<li>🗺️ <strong>Invalid atlas page</strong>: Check page number</li>
+<li>💥 <strong>Rendering issues</strong>: Try disabling complex styling</li>
+<li>🔄 <strong>Stale data</strong>: Click refresh button</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="-error-messages">🚨 Error Messages<a href="#-error-messages" class="hash-link" aria-label="Direct link to 🚨 Error Messages" title="Direct link to 🚨 Error Messages">​</a></h3>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="memory-errors">Memory Errors<a href="#memory-errors" class="hash-link" aria-label="Direct link to Memory Errors" title="Direct link to Memory Errors">​</a></h4>
+<ul>
+<li><strong>Message</strong>: &quot;Not enough memory for export&quot;</li>
+<li><strong>Solution</strong>:<!-- -->
+<ul>
+<li>📉 Reduce DPI settings</li>
+<li>📏 Use smaller custom dimensions</li>
+<li>🗂️ Export in smaller batches</li>
+</ul>
+</li>
+</ul>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="file-access-errors">File Access Errors<a href="#file-access-errors" class="hash-link" aria-label="Direct link to File Access Errors" title="Direct link to File Access Errors">​</a></h4>
+<ul>
+<li><strong>Message</strong>: &quot;Could not write to file&quot;</li>
+<li><strong>Solutions</strong>:<!-- -->
+<ul>
+<li>🔑 Check folder permissions</li>
+<li>💾 Ensure disk space available</li>
+<li>📝 Verify filename is valid</li>
+</ul>
+</li>
+</ul>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="atlas-errors">Atlas Errors<a href="#atlas-errors" class="hash-link" aria-label="Direct link to Atlas Errors" title="Direct link to Atlas Errors">​</a></h4>
+<ul>
+<li><strong>Message</strong>: &quot;Failed to seek to page X&quot;</li>
+<li><strong>Solutions</strong>:<!-- -->
+<ul>
+<li>🔍 Check coverage layer validity</li>
+<li>🔄 Refresh atlas in layout</li>
+<li>📊 Verify feature count matches</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="-tips--best-practices">💡 Tips &amp; Best Practices<a href="#-tips--best-practices" class="hash-link" aria-label="Direct link to 💡 Tips &amp; Best Practices" title="Direct link to 💡 Tips &amp; Best Practices">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="-performance-optimization">🎯 Performance Optimization<a href="#-performance-optimization" class="hash-link" aria-label="Direct link to 🎯 Performance Optimization" title="Direct link to 🎯 Performance Optimization">​</a></h3>
+<ul>
+<li>🚀 <strong>Disable preview rendering</strong> for large atlases</li>
+<li>📉 <strong>Use lower DPI</strong> for draft exports</li>
+<li>🗂️ <strong>Export in batches</strong> for very large atlases</li>
+<li>💾 <strong>Close other applications</strong> for memory-intensive exports</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="-file-organization">📁 File Organization<a href="#-file-organization" class="hash-link" aria-label="Direct link to 📁 File Organization" title="Direct link to 📁 File Organization">​</a></h3>
+<ul>
+<li>📂 <strong>Use descriptive folder names</strong> with dates</li>
+<li>🏷️ <strong>Include field names in patterns</strong> for easy identification</li>
+<li>📊 <strong>Create subdirectories</strong> for different export types</li>
+<li>🗃️ <strong>Archive old exports</strong> regularly</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="-quality-settings-1">🎨 Quality Settings<a href="#-quality-settings-1" class="hash-link" aria-label="Direct link to 🎨 Quality Settings" title="Direct link to 🎨 Quality Settings">​</a></h3>
+<ul>
+<li>📱 <strong>Screen viewing</strong>: 150 DPI, PNG format</li>
+<li>🖨️ <strong>Office printing</strong>: 300 DPI, PDF format</li>
+<li>📊 <strong>Professional printing</strong>: 600 DPI, PDF with vectors</li>
+<li>🌐 <strong>Web publishing</strong>: 96 DPI, PNG with transparency</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="-atlas-configuration">🔧 Atlas Configuration<a href="#-atlas-configuration" class="hash-link" aria-label="Direct link to 🔧 Atlas Configuration" title="Direct link to 🔧 Atlas Configuration">​</a></h3>
+<ul>
+<li>✅ <strong>Test with small samples</strong> before full export</li>
+<li>🏷️ <strong>Use meaningful field names</strong> in filename patterns</li>
+<li>🧹 <strong>Clean data</strong> to avoid invalid filename characters</li>
+<li>🔍 <strong>Preview random pages</strong> to verify consistency</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="-backup--recovery">💾 Backup &amp; Recovery<a href="#-backup--recovery" class="hash-link" aria-label="Direct link to 💾 Backup &amp; Recovery" title="Direct link to 💾 Backup &amp; Recovery">​</a></h3>
+<ul>
+<li>💿 <strong>Backup project files</strong> before major exports</li>
+<li>📋 <strong>Save export settings</strong> by documenting parameters</li>
+<li>🗂️ <strong>Keep export logs</strong> for troubleshooting</li>
+<li>🔄 <strong>Test recovery procedures</strong> with sample data</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="-workflow-efficiency">🚀 Workflow Efficiency<a href="#-workflow-efficiency" class="hash-link" aria-label="Direct link to 🚀 Workflow Efficiency" title="Direct link to 🚀 Workflow Efficiency">​</a></h3>
+<ol>
+<li>🎯 <strong>Start small</strong>: Test with 2-3 pages first</li>
+<li>👀 <strong>Use preview extensively</strong> before full export</li>
+<li>📊 <strong>Monitor resource usage</strong> during export</li>
+<li>✅ <strong>Verify outputs</strong> before deleting source data</li>
+<li>📝 <strong>Document settings</strong> for reproducible results</li>
+</ol></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-tags-row"><div class="col"><b>Tags:</b><ul class="tags_jXut padding--none margin-left--sm"><li class="tag_QGVx"><a rel="tag" class="tag_zVej tagRegular_sFm0" href="/gruhanakshaweb/docs/tags/property-parcel-map">property parcel map</a></li><li class="tag_QGVx"><a rel="tag" class="tag_zVej tagRegular_sFm0" href="/gruhanakshaweb/docs/tags/ppm">ppm</a></li><li class="tag_QGVx"><a rel="tag" class="tag_zVej tagRegular_sFm0" href="/gruhanakshaweb/docs/tags/gruhanaksha">gruhanaksha</a></li></ul></div></div><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col"><a href="https://github.com/surveyorstories/gruhanakshaweb/edit/main/docs/Tutorial-Modules/atlas_export.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_JAkA"><span class="theme-last-updated">Last updated<!-- --> on <b><time datetime="2025-08-20T10:31:46.000Z" itemprop="dateModified">Aug 20, 2025</time></b> by <b>Lokesh Metta</b></span></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/gruhanakshaweb/docs/Tutorial-Modules/masterpanel"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">🧭 Master Panel</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/gruhanakshaweb/docs/Tutorial-Modules/drawline"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">🧭 Drawline Tool</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#-key-features" class="table-of-contents__link toc-highlight">✨ Key Features</a></li><li><a href="#-getting-started" class="table-of-contents__link toc-highlight">🚀 Getting Started</a><ul><li><a href="#prerequisites" class="table-of-contents__link toc-highlight">Prerequisites</a></li><li><a href="#launching-the-tool" class="table-of-contents__link toc-highlight">Launching the Tool</a></li></ul></li><li><a href="#️-interface-layout" class="table-of-contents__link toc-highlight">🖥️ Interface Layout</a><ul><li><a href="#left-panel-settings--configuration-️" class="table-of-contents__link toc-highlight">Left Panel: Settings &amp; Configuration ⚙️</a></li><li><a href="#right-panel-preview--logging-" class="table-of-contents__link toc-highlight">Right Panel: Preview &amp; Logging 📊</a></li></ul></li><li><a href="#-layout-selection" class="table-of-contents__link toc-highlight">🎯 Layout Selection</a><ul><li><a href="#-selecting-a-layout" class="table-of-contents__link toc-highlight">📋 Selecting a Layout</a></li><li><a href="#atlas-status-messages" class="table-of-contents__link toc-highlight">Atlas Status Messages</a></li></ul></li><li><a href="#-export-modes" class="table-of-contents__link toc-highlight">🎨 Export Modes</a><ul><li><a href="#-single-layout-export" class="table-of-contents__link toc-highlight">📑 Single Layout Export</a></li><li><a href="#️-export-all-atlas-pages" class="table-of-contents__link toc-highlight">🗂️ Export All Atlas Pages</a></li><li><a href="#-export-custom-atlas-pages" class="table-of-contents__link toc-highlight">🎯 Export Custom Atlas Pages</a></li><li><a href="#-disabled-options" class="table-of-contents__link toc-highlight">🚫 Disabled Options</a></li></ul></li><li><a href="#-output-settings" class="table-of-contents__link toc-highlight">📁 Output Settings</a><ul><li><a href="#️-output-directory" class="table-of-contents__link toc-highlight">🗂️ Output Directory</a></li><li><a href="#-filename-pattern" class="table-of-contents__link toc-highlight">📝 Filename Pattern</a></li><li><a href="#-export-format" class="table-of-contents__link toc-highlight">📄 Export Format</a></li></ul></li><li><a href="#-quality-settings" class="table-of-contents__link toc-highlight">⚡ Quality Settings</a><ul><li><a href="#-dpi-dots-per-inch" class="table-of-contents__link toc-highlight">🎯 DPI (Dots Per Inch)</a></li><li><a href="#-image-quality-jpg-only" class="table-of-contents__link toc-highlight">🎨 Image Quality (JPG only)</a></li><li><a href="#-custom-dimensions" class="table-of-contents__link toc-highlight">📐 Custom Dimensions</a></li><li><a href="#️-compression-settings" class="table-of-contents__link toc-highlight">🗜️ Compression Settings</a></li></ul></li><li><a href="#-advanced-options" class="table-of-contents__link toc-highlight">🔧 Advanced Options</a><ul><li><a href="#-metadata-options" class="table-of-contents__link toc-highlight">📊 Metadata Options</a></li><li><a href="#-vector-vs-raster-pdfsvg" class="table-of-contents__link toc-highlight">🎨 Vector vs Raster (PDF/SVG)</a></li><li><a href="#-text-rendering-pdfsvg" class="table-of-contents__link toc-highlight">📝 Text Rendering (PDF/SVG)</a></li><li><a href="#️-pdf-specific-options" class="table-of-contents__link toc-highlight">🗜️ PDF-Specific Options</a></li></ul></li><li><a href="#️-preview-features" class="table-of-contents__link toc-highlight">👁️ Preview Features</a><ul><li><a href="#-preview-controls" class="table-of-contents__link toc-highlight">🔍 Preview Controls</a></li><li><a href="#-preview-information" class="table-of-contents__link toc-highlight">📊 Preview Information</a></li><li><a href="#️-visual-preview" class="table-of-contents__link toc-highlight">🖼️ Visual Preview</a></li><li><a href="#-preview-tips" class="table-of-contents__link toc-highlight">💡 Preview Tips</a></li></ul></li><li><a href="#️-export-process" class="table-of-contents__link toc-highlight">▶️ Export Process</a><ul><li><a href="#-starting-export" class="table-of-contents__link toc-highlight">🎬 Starting Export</a></li><li><a href="#-progress-monitoring" class="table-of-contents__link toc-highlight">📊 Progress Monitoring</a></li><li><a href="#️-cancelling-export" class="table-of-contents__link toc-highlight">⏹️ Cancelling Export</a></li><li><a href="#-completion-messages" class="table-of-contents__link toc-highlight">✅ Completion Messages</a></li></ul></li><li><a href="#-troubleshooting" class="table-of-contents__link toc-highlight">🔧 Troubleshooting</a><ul><li><a href="#-common-issues" class="table-of-contents__link toc-highlight">❌ Common Issues</a></li><li><a href="#-error-messages" class="table-of-contents__link toc-highlight">🚨 Error Messages</a></li></ul></li><li><a href="#-tips--best-practices" class="table-of-contents__link toc-highlight">💡 Tips &amp; Best Practices</a><ul><li><a href="#-performance-optimization" class="table-of-contents__link toc-highlight">🎯 Performance Optimization</a></li><li><a href="#-file-organization" class="table-of-contents__link toc-highlight">📁 File Organization</a></li><li><a href="#-quality-settings-1" class="table-of-contents__link toc-highlight">🎨 Quality Settings</a></li><li><a href="#-atlas-configuration" class="table-of-contents__link toc-highlight">🔧 Atlas Configuration</a></li><li><a href="#-backup--recovery" class="table-of-contents__link toc-highlight">💾 Backup &amp; Recovery</a></li><li><a href="#-workflow-efficiency" class="table-of-contents__link toc-highlight">🚀 Workflow Efficiency</a></li></ul></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Docs</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/gruhanakshaweb/docs">Documentation</a></li><li class="footer__item"><a href="https://surveyorstories.github.io/bhudocs/" target="_blank" rel="noopener noreferrer" class="footer__link-item">Bhukamatha</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Community</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://youtube.com/@surveyorstories" target="_blank" rel="noopener noreferrer" class="footer__link-item">Youtube<svg width="13.5" height="13.5" aria-hidden="true" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://t.me/surveyorstories" target="_blank" rel="noopener noreferrer" class="footer__link-item">Telegram<svg width="13.5" height="13.5" aria-hidden="true" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">More</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/gruhanakshaweb/blog">Blog</a></li><li class="footer__item"><a href="https://github.com/surveyorstories" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-hidden="true" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2025 Surveyor Stories</div></div></div></footer></div>
+</body>
+</html>

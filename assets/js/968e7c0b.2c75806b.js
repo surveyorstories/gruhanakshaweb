@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkgruhanakshaweb=self.webpackChunkgruhanakshaweb||[]).push([[9295],{5715:a=>{a.exports=JSON.parse('{"tags":[{"label":"toolset","permalink":"/gruhanakshaweb/docs/tags/toolset","count":1},{"label":"toolpanel","permalink":"/gruhanakshaweb/docs/tags/toolpanel","count":1}]}')}}]);
