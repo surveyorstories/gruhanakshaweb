@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios"; // You may need to install axios: npm install axios
+import posthog from "posthog-js";
 
 const DynamicDownloadButton = () => {
   const [downloadLink, setDownloadLink] = useState("");
@@ -73,6 +74,13 @@ const DynamicDownloadButton = () => {
       });
   }, []);
 
+  const handleDownload = (release) => {
+    posthog.capture("download_clicked", {
+      release_name: release.name,
+      download_url: release.url,
+    });
+  };
+
   return (
     <>
       <button className="download-button" role="button" aria-label="Download button">
@@ -90,6 +98,7 @@ const DynamicDownloadButton = () => {
                     href={qgisPluginLink}
                     download
                     aria-label="Download from QGIS Plugin Repository"
+                    onClick={() => handleDownload({ name: "QGIS Plugin", url: qgisPluginLink })}
                   >
                     Download from QGIS Plugins
                   </a>
@@ -103,7 +112,12 @@ const DynamicDownloadButton = () => {
                     QGIS Plugin Page
                   </a>
 
-                  <a aria-label="Latest Release" href={downloadLink} download>
+                  <a
+                    aria-label="Latest Release"
+                    href={downloadLink}
+                    download
+                    onClick={() => handleDownload({ name: latestRelease.name, url: downloadLink })}
+                  >
                     Latest: {latestRelease.name}
                     {/* ({latestRelease.version}) */}
                   </a>
@@ -116,8 +130,13 @@ const DynamicDownloadButton = () => {
           <div>
             <p>Old Releases</p>
             {oldReleases.length > 0 ? (
-              oldReleases.map((release, index) => (
-                <a key={index} href={release.url} download>
+                            oldReleases.map((release, index) => (
+                <a
+                  key={index}
+                  href={release.url}
+                  download
+                  onClick={() => handleDownload(release)}
+                >
                   {release.name}
                 </a>
               ))

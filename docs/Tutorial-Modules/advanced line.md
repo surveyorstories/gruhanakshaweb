@@ -95,17 +95,17 @@ Press **R** to enter circle mode.
 Press **A** to cycle through angle lock modes:
 
 1. **First Press**: 🔒 90° Lock
-
+   
    - Constrains lines to 90° increments from previous segment
    - For first segment: locks to cardinal directions (N, E, S, W)
 
 2. **Second Press**: 🔒 180° Lock
-
+   
    - Constrains lines to 180° (parallel/perpendicular)
    - For first segment: locks to N-S or E-W axes
 
 3. **Third Press**: ❌ Cancel Lock
-
+   
    - Returns to free drawing
 
 **Double-tap A**: Quick cancel of current lock
@@ -256,8 +256,8 @@ The live cursor info shows:
 
 ## 🎨 Visual Indicators
 
-| Color              | Meaning              |
-| ------------------ | -------------------- |
+| Color           | Meaning              |
+| --------------- | -------------------- |
 | **Green Box**   | Placed vertex points |
-| **Pink Box**  | Active snap point    |
+| **Pink Box**    | Active snap point    |
 | **Gray Dashed** | Preview line         |
