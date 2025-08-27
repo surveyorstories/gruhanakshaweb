@@ -97,6 +97,7 @@ const DynamicDownloadButton = () => {
                   <a
                     href={qgisPluginLink}
                     download
+                    className="ph-no-capture"
                     aria-label="Download from QGIS Plugin Repository"
                     onClick={() => handleDownload({ name: "QGIS Plugin", url: qgisPluginLink })}
                   >
@@ -107,6 +108,7 @@ const DynamicDownloadButton = () => {
                     href="https://plugins.qgis.org/plugins/gruhanaksha/"
                     target="_blank"
                     rel="noopener noreferrer"
+                    className="ph-no-capture"
                     aria-label="QGIS Plugin Page"
                   >
                     QGIS Plugin Page
@@ -116,6 +118,7 @@ const DynamicDownloadButton = () => {
                     aria-label="Latest Release"
                     href={downloadLink}
                     download
+                    className="ph-no-capture"
                     onClick={() => handleDownload({ name: latestRelease.name, url: downloadLink })}
                   >
                     Latest: {latestRelease.name}
@@ -130,11 +133,12 @@ const DynamicDownloadButton = () => {
           <div>
             <p>Old Releases</p>
             {oldReleases.length > 0 ? (
-                            oldReleases.map((release, index) => (
+              oldReleases.map((release, index) => (
                 <a
                   key={index}
                   href={release.url}
                   download
+                  className="ph-no-capture"
                   onClick={() => handleDownload(release)}
                 >
                   {release.name}
@@ -145,7 +149,7 @@ const DynamicDownloadButton = () => {
             )}
           </div>
 
-          <a href="./releases" target="_blank" rel="noopener noreferrer">
+          <a href="./releases" target="_blank" rel="noopener noreferrer" className="ph-no-capture">
             All Releases
           </a>
         </div>
