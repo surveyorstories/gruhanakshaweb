@@ -33,7 +33,6 @@ const config = {
   projectName: 'gruhanaksha', // Usually your repo name.
   trailingSlash: false,
   onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
 
   // Even if you don't use internationalization, you can use this field to set
   // useful metadata like html lang. For example, if your site is Chinese, you
@@ -41,6 +40,12 @@ const config = {
   i18n: {
     defaultLocale: 'en',
     locales: ['en'],
+  },
+
+  markdown: {
+    hooks: {
+      onBrokenMarkdownLinks: 'warn',
+    },
   },
 
   presets: [
@@ -87,10 +92,7 @@ const config = {
             return items.filter((item) => !item.url.includes('/page/'));
           },
         },
-        gtag: {
-          trackingID: 'G-JXGYS5GKJV',
-          anonymizeIP: true
-        },
+
       }),
     ],
   ],
@@ -99,6 +101,9 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       // Replace with your project's social card
+      // googleAdsense: {
+      //   dataAdClient: 'pub-5740737782081297',
+      // },
       image: 'img/logo_light.png',
       navbar: {
         title: "Surveyor stories",
@@ -213,7 +218,10 @@ const config = {
     ]
   ],
   plugins: [
-
+    [
+      "@gracefullight/docusaurus-plugin-google-adsense",
+      { adClient: 'pub-5740737782081297' },
+    ],
     [
       'posthog-docusaurus',
       {
@@ -221,7 +229,14 @@ const config = {
         // appUrl: 'https://us.i.posthog.com', // optional, defaults to "https://us.i.posthog.com"
         enableInDevelopment: false // optional
       }
-    ]
+    ],
+
+    [
+      '@docusaurus/plugin-google-gtag',
+      {
+        trackingID: 'G-JXGYS5GKJV',
+      },
+    ],
   ]
 };
 

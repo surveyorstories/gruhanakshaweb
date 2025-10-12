@@ -2,189 +2,119 @@
 sidebar_position: 3
 
 keywords:
-  - plotter widget
-  - polygon adjuster
+  - plotter
+  - fmb
   - gruhanaksha
+  - survey
+  - offset
+  - cut point
 
-tags: [plotterwidget,plotter, fmb, offset]
-slug: plotterwidget
+tags: [plotter, fmb, survey, geometry, offset, cutpoint]
+slug: plotter
 ---
 
-# 🧭 Plotter Widget
+# 📏 Plotter Widget
 
-The **Plotter Widget** is a PyQt5-based graphical interface integrated into QGIS that enables users to **plot calculated points** like cut points, offset points, and extended points along a selected line feature. 🎯 This tool is especially valuable for **precision mapping** and **SVAMITVA survey workflows** requiring accurate line-based geometry operations.
+The **Plotter Widget** is a crucial tool in the Gruhanaksha plugin, designed for accurately plotting points along a selected line feature. This tool is particularly useful in land surveying and FMB workflows for marking specific points like "Cut Points" and "Offset Points".
+
+It is available as a tab in the main **Plotter** tool window.
 
 ## 🔧 **Key Features**
 
-1. **📏 Unit Conversion**
+1. **📏 Flexible Unit Conversion**
+    * Meters
+    * Metric Links (1 = 0.2 meters)
+    * Gunter’s Links (1 = 0.201168 meters)
+    * Feet (1 = 0.3048 meters)
+    * Yards (1 = 0.9144 meters)
 
-   - Meters
+2. **📍 Point Plotting**
+    * **Cut Point**: Plot a point at a specific distance along a selected line from either the start or end point.
+    * **Offset Point**: Plot a point perpendicular to the "Cut Point" at a specified offset distance.
+    * **Extended Point**: If the "Cut Point Length" is negative or greater than the line length, it plots a point by extending the line.
 
-   - Metric Links (1 = 0.2 meters)
-
-   - Gunter’s Links (1 = 0.201168 meters)
-
-2. **📌 Base Point Selection**
-
-   - Start Point
-
-   - End Point
-
-3. **📐 Point Types**
-
-   - **Cut Point**: At a given length along the line.
-
-   - **Offset Point**: Perpendicular to the line at a given distance.
-
-   - **Extended Point**: When the length exceeds the original line.
+3. **🗺️ Interactive Line Selection**
+    * The tool works with a single selected line feature from any line layer in your QGIS project.
+    * The start (🟢) and end (🔴) points of the selected line are automatically marked for easy reference.
 
 4. **🗂️ Memory Layer Integration**
-
-   - Outputs are saved as a new memory layer.
-
-   - Works with both single-part and multi-part lines.
-
-5. **🎨 Categorized Symbology**
-
-   - Green: Start Point
-
-   - Red: End Point
-
-   - Orange: Cut Point
-
-   - Blue: Offset Point
-
-   - Purple: Extended Point
-
-6. **🛡️ Robust Error Handling**
-
-   - Clear messages guide users to correct inputs.
+    * The plotted points are added to a new or existing memory layer named **"Plotted Points"**.
+    * Points are categorized by type ("Cut Point", "Offset Point", "Extended Point") and styled for clear identification.
 
 ## 🚀 **How to Use the Plotter Widget**
 
 ### 🪟 Step 1: Launch the Widget
 
-- Open QGIS.
+1. Open QGIS.
+2. From the main tool panel, open the **Plotter** tool.
+3. Select the **Plotter** tab.
 
-- From the plugin menu or the custom GUI, open **Plotter Widget**.
+### ✒️ Step 2: Select a Line Feature
 
-### 📌 Step 2: Select a Line Feature
+1. Select a single line feature in any of your map layers.
+2. The start and end points of the line will be highlighted.
 
-- Activate a line layer from the Layers panel.
+### 🛠️ Step 3: Configure Inputs
 
-- Select **exactly one** line feature.
+#### 🔣 a. Units
 
-ℹ️ *Supports both single and multi-part geometries.*
+Choose the measurement unit for the lengths you will enter.
 
-## 🛠️ Step 3: Configure Inputs
+* `Meters`
+* `Metric Links`
+* `Gunter’s Links`
+* `Feet`
+* `Yards`
 
-### 🔣 a. Units
+#### 👉 b. Choose Point
 
-Choose from:
+Select the reference point on the line for plotting.
 
-- `Meters`
+* `🟢 Start Point`
+* `🔴 End Point`
 
-- `Metric Links`
+#### 📏 c. Lengths
 
-- `Gunter’s Links`
+* **Cut Point Length**: Enter the distance from the chosen point (start/end) along the line to place the "Cut Point".
+* **Offset Length**: Enter the perpendicular distance from the "Cut Point" to place the "Offset Point".
 
-### 🧭 b. Choose Base Point
+### 🧩 Step 4: Plot the Points
 
-Select whether to start from the:
+* Click **Plot** ▶️
+* The tool will calculate and plot the "Cut Point" and "Offset Point" on the **"Plotted Points"** memory layer.
 
-- `Start Point`
+### 🗺️ Step 5: Visualize the Result
 
-- `End Point`
-
-### ✂️ c. Cut Length
-
-- Enter the distance for the cut point.
-
-- Negative value → Extends the line backward.
-
-### ↕️ d. Offset Length
-
-- Enter perpendicular offset distance.
-
-- Positive → Right of line.
-
-- Negative → Left of line.
-
-## 🧩 Step 4: Plot Points
-
-- Click **Plot** ▶️
-
-- The tool generates:
-  
-  - ✅ **Cut Point**
-  
-  - 🔵 **Offset Point**
-  
-  - 🟣 **Extended Point** (if applicable)
-
-They are added to a new memory layer: **"Plotted Points"**.
-
-## 🗺️ Step 5: Visualize Results
-
-### 🖌️ Symbology Key
-
-| Color     | Point Type     |
-| --------- | -------------- |
-| 🟢 Green  | Start Point    |
-| 🔴 Red    | End Point      |
-| 🟠 Orange | Cut Point      |
-| 🔵 Blue   | Offset Point   |
-| 🟣 Purple | Extended Point |
-
-You can rerun the widget with new values as needed.
+The newly created points will appear on the map, styled by their type.
 
 ## ⚠️ Error Messages & Troubleshooting
 
-| ❗ Error Message                       | 💡 Cause                        | ✅ Solution                         |
-| ------------------------------------- | ------------------------------- | ---------------------------------- |
-| "Please select a layer."              | No layer selected               | Select a line layer in QGIS.       |
-| "Selected layer is not a line layer." | Wrong geometry type             | Use a valid line geometry layer.   |
-| "Select exactly one line feature."    | 0 or multiple features selected | Select one valid line feature.     |
-| "Feature has no geometry."            | Geometry is missing             | Choose a feature with valid lines. |
-| "Cut point calculation failed."       | Input error or geometry problem | Check values and retry.            |
+| ❗ Error Message | 💡 Cause | ✅ Solution |
+| :--- | :--- | :--- |
+| "Please select a layer." | No layer is active in the Layers panel. | Select or activate a layer in your project. |
+| "The selected layer is not a line layer." | The selected layer is not a line layer. | Select a line layer. |
+| "Please select exactly one line feature." | More than one or no line features are selected. | Select a single line feature. |
+| "Selected feature has no geometry." | The selected feature has no geometry. | Select a feature with valid geometry. |
 
 ## 🌟 Best Practices
 
-- ✔️ Always validate your selected feature before plotting.
-
-- 📏 Use correct units based on your CRS and survey standards.
-
-- 🧩 Understand the behavior with multi-part lines.
-
-- 💾 Save the memory layer if needed for further analysis.
+* ✔️ Ensure your line layer has a valid CRS.
+* 📏 Double-check your units to match the project's requirements.
+* 💾 If you need to keep the generated points, right-click the "Plotted Points" memory layer and choose **Export > Save Features As...** to save it to a permanent file (e.g., Shapefile, GeoPackage).
 
 ## 📝 Example Use Case
 
-🗺️ **Scenario**: You want to place a cut point 50m from the start of a road, then offset it 10m right for boundary marking.
+🗺️ **Scenario**: You need to mark a point 15 meters along a property line from its start, and then mark an offset point 5 meters to the left.
 
-| Input         | Value  |
-| ------------- | ------ |
-| Units         | Meters |
-| Base Point    | Start  |
-| Cut Length    | 50     |
-| Offset Length | 10     |
+1. Select the property line feature on the map.
+2. In the **Plotter** tab, set **Units** to `Meters`.
+3. Choose **🟢 Start Point**.
+4. Set **Cut Point Length** to `15`.
+5. Set **Offset Length** to `5`.
+6. Click **Plot**.
 
-🧮 Result:
-
-- A cut point at 50m
-
-- An offset point 10m to the right
-
-- Layer: **"Plotted Points"**
-
-## 🧠 Advanced Tips
-
-- ➖ Use **negative cut lengths** to extend backwards.
-
-- 🧼 The layer is always reset to prevent duplicates.
-
-- 🔁 Reuse for multiple segments – each run updates the points cleanly.
+🧮 **Result**: A "Cut Point" is created 15m from the start of the line, and an "Offset Point" is created 5m away from the "Cut Point", perpendicular to the line.
 
 ---
 
-📌 **The Plotter Widget empowers SVAMITVA workflows and survey operations with high precision and ease.** Whether you're mapping cadastral plots or engineering offsets, this tool ensures spatial accuracy every step of the way. 🗺️📍
+📌 **The Plotter Widget is an essential tool for precise point creation along lines, streamlining survey and cadastral mapping workflows. 🗺️📍**

@@ -1,108 +1,126 @@
 ---
-sidebar_position: 1
+sidebar_position: 2
 
 keywords:
-  - tool set
+  - tools
   - tool panel
+  - plotter
+  - adjuster
+  - free adjuster
+  - backup
+  - gruhanaksha
+  - qgis plugin
 
-tags: [toolset,toolpanel,tools]
-slug: toolset
+tags: [tools, toolpanel, plotter, adjuster, freeadjuster, backup]
+slug: tools
 ---
 
-# 🛠️ Tool Panel
+# 🛠️ Tools Panel
 
-The **Tool Panel** is a floating window inside QGIS that gives access to multiple custom tools, useful for working with land parcels, base lines, and plotting boundaries. It includes buttons for:
-![tool_set](../img/tools.png)
+The **Tools Panel** is a floating window in the Gruhanaksha QGIS plugin that provides quick access to a suite of specialized tools for land surveying, mapping, and data management. It serves as a central hub for activating various widgets and tools essential for cadastral and geometric operations.
 
-- **[DrawLine](./drawline)** – For drawing base lines and circles. `deprecated:>v1.0.1`
+## 🔧 Key Features
 
-- **[Plotter](./plotterwidget)** – For visualizing and plotting triangles, bisectors, and angle tools.
+1. **📐 Plotter Tool**
+   - Launches the Combined Plotter Widget for advanced geometric plotting, including triangles, bisectors, and point calculations.
 
-- **[Adjuster](./polygonadjuster)** – For adjusting polygon areas or shapes interactively.
+2. **🔧 Adjuster Tool**
+   - Activates the Polygon Adjuster for interactive polygon reshaping and area adjustments.
 
-## 🧭 Opening the Tool Panel
+3. **🎯 Free Adjuster Tool**
+   - Enables the Freehand Adjuster for precise vertex-level editing of geometries.
 
-Once the plugin is installed, the Tool Panel can be opened from:
+4. **💾 Backup Tool**
+   - Opens the Backup Plugin for automated project saving and comprehensive backup management.
 
-- A **toolbar button**, or
+## 🚀 How to Use the Tools Panel
 
-- Automatically as a **floating window** when QGIS starts (depending on your setup).
+### 🪟 Step 1: Launch the Tools Panel
 
-The panel appears with the title: **“Tool Panel”** and includes three buttons grouped under the label **“Tools”**.
+1. Open QGIS with the Gruhanaksha plugin installed.
+2. From the QGIS menu, go to **Plugins > Gruhanaksha > Tools**.
+3. The Tools Panel window will appear as a floating widget titled "Tool Panel".
 
-## 🧩 Buttons in the Tool Panel
+### 🖱️ Step 2: Access Individual Tools
 
-### 1. 🔷 **DrawLine**
+The panel contains a group box labeled "Tools" with buttons for each available tool:
 
-`deprecated:>v1.0.1`
+- **Plotter**: Click to open the Combined Plotter Widget.
+- **Adjuster**: Click to activate the Polygon Adjuster tool.
+- **Free Adjuster**: Click to activate the Freehand Adjuster tool.
+- **Backup**: Click to open the Backup Plugin interface.
 
-- **Icon:** ![DrawLine](../img/baseline.png)
+Each button will launch its respective tool or widget. Some tools may require a project to be saved first.
 
-- **Use this to:**  
-  Open the **Baseline Tool** which allows drawing reference lines (base lines) for plotting and measurements.
+## 📋 Tool Descriptions
 
-- **Steps:**
-  
-  - Click **[DrawLine](./drawline)**.
-  
-  - The baseline tool will open.
-  
-  - Use it to draw a line between two known points.
+### 📐 Plotter
 
-### 2. 📐 **Plotter**
+Opens the Combined Main Widget, which includes tabs for:
 
-- **Icon:** ![Plotter](../img/plotter.png)
+- Triangle plotting and calculations
+- Point plotting along lines with offsets
+- Geometric constructions for survey work
 
-- **Use this to:**  
-  Open the **[Combined Plotter Tool](./plotterwidget)**, which supports triangle plotting, angle bisectors, and more.
+**Requirements**: A QGIS project must be open and saved.
 
-- **Requirements:**  
-  You must select **one line feature** from a line layer.
+### 🔧 Adjuster
 
-- **What it shows:**
-  
-  - Displays the **Start Point** (green) and **End Point** (red) on the selected line.
-  
-  - Opens a visual tool for plotting geometry based on those points.
+Activates the Unified Polygon Adjuster tool, allowing users to:
 
-### 3. 🧮 **Adjuster**
+- Select and modify polygon geometries
+- Adjust areas while maintaining shape proportions
+- Perform interactive edits on vector layers
 
-- **Icon:** ![Adjuster](../img/adjuster.png)
+**Requirements**: Compatible with polygon layers; may require selection of features.
 
-- **Use this to:**  
-  Open the **[Polygon Adjuster Tool](./polygonadjuster)**, which helps resize or reshape polygon areas.
+### 🎯 Free Adjuster
 
-- **Example:**  
-  Increase the area of a plot while maintaining its general shape.
+Activates the Vertex Tool for freehand adjustments, enabling:
 
-## 🗂️ Important Behavior
+- Precise editing of individual vertices
+- Freeform geometry modifications
+- Detailed control over point positions
 
-- The **Plotter** and **Adjuster** tools use data from the currently **selected feature(s)** in your active QGIS layer.
+**Requirements**: Works with editable vector layers.
 
-- If you haven’t selected anything, or if the layer type is wrong (e.g., points instead of lines), you’ll see a helpful error message.
+### 💾 Backup
 
-## 🎨 Automatic Styling
+Launches the Backup Plugin, providing:
 
-When you use the **Plotter Tool**, it creates a point layer named **“Start and End Points”**:
+- Automated project backups
+- Comprehensive save options
+- Timer-based saving to prevent data loss
 
-- The **Start Point** is shown in **green**.
+**Requirements**: A QGIS project must be open and saved.
 
-- The **End Point** is shown in **red**.
+## ⚠️ Error Messages & Troubleshooting
 
-- You can see this layer in the **Layers Panel**, and it updates every time you select a new line and reopen the plotter.
+| ❗ Error Message | 💡 Cause | ✅ Solution |
+| :--- | :--- | :--- |
+| "Project not saved" | Attempting to use tools without saving the project first. | Save your QGIS project before accessing tools. |
+| Tool fails to launch | Plugin components not properly loaded. | Restart QGIS or reinstall the plugin. |
+| No response on button click | Layer or feature selection issues. | Ensure appropriate layers are selected for the specific tool. |
 
-## ✅ Tips for Best Use
+## 🌟 Best Practices
 
-- Always make sure you select the correct feature before using a tool.
+- ✔️ Always save your project before using tools to avoid data loss.
+- 📐 Select appropriate layers and features before activating geometry-related tools.
+- 💾 Regularly use the Backup tool to protect your work.
+- 🔄 Close unnecessary tool windows to maintain QGIS performance.
 
-- Only **one feature** should be selected when using the **Plotter Tool**.
+## 📝 Example Workflow
 
-- You can clear or delete the **“Start and End Points”** layer if not needed later.
+🗺️ **Scenario**: You need to plot points along a baseline, adjust a polygon boundary, and ensure your project is backed up.
 
-## ❗ Troubleshooting
+1. Save your QGIS project.
+2. Open the Tools Panel via **Plugins > Gruhanaksha > Tools**.
+3. Click **Plotter** to open the plotting widget and create your points.
+4. Click **Adjuster** to modify polygon shapes as needed.
+5. Click **Backup** to set up automated saving.
 
-| Problem                               | What to Do                                                                         |
-| ------------------------------------- | ---------------------------------------------------------------------------------- |
-| Nothing happens when I click a button | Make sure a valid layer and feature is selected.                                   |
-| Error message appears                 | Read the message carefully – it tells you what’s missing (e.g., no line selected). |
-| Start/End points are not shown        | Check if the **“Start and End Points”** layer is added and visible.                |
+🧮 **Result**: Efficient workflow for geometric operations with data protection.
+
+---
+
+📌 **The Tools Panel streamlines access to essential surveying and mapping tools, enhancing productivity in QGIS-based land management projects. 🗺️🛠️**
