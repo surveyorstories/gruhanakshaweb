@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunkgruhanakshaweb=globalThis.webpackChunkgruhanakshaweb||[]).push([[3236],{2279:a=>{a.exports=JSON.parse('{"metadata":{"permalink":"/gruhanakshaweb/blog","page":1,"postsPerPage":10,"totalPages":1,"totalCount":1,"blogDescription":"Blog","blogTitle":"Blog"}}')}}]);
