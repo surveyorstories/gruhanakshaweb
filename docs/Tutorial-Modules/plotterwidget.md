@@ -2,22 +2,24 @@
 sidebar_position: 3
 
 keywords:
-  - plotter
+  - plotter widget
   - fmb
   - gruhanaksha
   - survey
   - offset
   - cut point
 
-tags: [plotter, fmb, survey, geometry, offset, cutpoint]
-slug: plotter
+tags: [plotterwidget, fmb, survey, geometry, offset, cutpoint]
+slug: plotterwidget
 ---
 
 # 📏 Plotter Widget
 
+`Available from v2.0.0`
+
 The **Plotter Widget** is a crucial tool in the Gruhanaksha plugin, designed for accurately plotting points along a selected line feature. This tool is particularly useful in land surveying and FMB workflows for marking specific points like "Cut Points" and "Offset Points".
 
-It is available as a tab in the main **Plotter** tool window.
+It is available as a tab within the **Plotter** tool.
 
 ## 🔧 **Key Features**
 
@@ -30,12 +32,14 @@ It is available as a tab in the main **Plotter** tool window.
 
 2. **📍 Point Plotting**
     * **Cut Point**: Plot a point at a specific distance along a selected line from either the start or end point.
+    * **Bisect Point**: Plot a point at a specific distance along a selected line without any offset.
     * **Offset Point**: Plot a point perpendicular to the "Cut Point" at a specified offset distance.
     * **Extended Point**: If the "Cut Point Length" is negative or greater than the line length, it plots a point by extending the line.
 
-3. **🗺️ Interactive Line Selection**
-    * The tool works with a single selected line feature from any line layer in your QGIS project.
-    * The start (🟢) and end (🔴) points of the selected line are automatically marked for easy reference.
+3. **🗺️ Interactive Line Segment Selection**
+    * Click directly on a line segment on the QGIS map canvas to select it.
+    * The start (🟢) and end (🔴) points of the selected segment are automatically marked for easy reference.
+    * Supports snapping for precise segment selection.
 
 4. **🗂️ Memory Layer Integration**
     * The plotted points are added to a new or existing memory layer named **"Plotted Points"**.
@@ -49,10 +53,14 @@ It is available as a tab in the main **Plotter** tool window.
 2. From the main tool panel, open the **Plotter** tool.
 3. Select the **Plotter** tab.
 
-### ✒️ Step 2: Select a Line Feature
+### 📌 Step 2: Select a Line Segment
 
-1. Select a single line feature in any of your map layers.
-2. The start and end points of the line will be highlighted.
+1. Click the **Select Segment** button. The button will change to "Selecting..." and a status message will guide you.
+2. Click on a line segment on the map canvas to select it.
+    * The start point will be marked in green (🟢).
+    * The end point will be marked in red (🔴).
+
+ℹ️ *Use snapping for higher accuracy. You can right-click at any time to clear the segment selection.*
 
 ### 🛠️ Step 3: Configure Inputs
 
@@ -87,14 +95,17 @@ Select the reference point on the line for plotting.
 
 The newly created points will appear on the map, styled by their type.
 
+### 🗑️ Step 6: Clear Segment
+
+* Click the **Clear Segment** button to remove the selected segment and reset the tool for a new operation.
+
 ## ⚠️ Error Messages & Troubleshooting
 
 | ❗ Error Message | 💡 Cause | ✅ Solution |
 | :--- | :--- | :--- |
-| "Please select a layer." | No layer is active in the Layers panel. | Select or activate a layer in your project. |
-| "The selected layer is not a line layer." | The selected layer is not a line layer. | Select a line layer. |
-| "Please select exactly one line feature." | More than one or no line features are selected. | Select a single line feature. |
-| "Selected feature has no geometry." | The selected feature has no geometry. | Select a feature with valid geometry. |
+| "Please select a segment first." | "Plot" was clicked before a segment was selected. | Use the "Select Segment" button to select a segment. |
+| "Direction vector has zero length, cannot extend line." | The selected segment has zero length. | Select a valid segment with length. |
+| "Line segment has zero length, cannot calculate offset." | The selected segment has zero length. | Select a valid segment with length. |
 
 ## 🌟 Best Practices
 
@@ -106,14 +117,14 @@ The newly created points will appear on the map, styled by their type.
 
 🗺️ **Scenario**: You need to mark a point 15 meters along a property line from its start, and then mark an offset point 5 meters to the left.
 
-1. Select the property line feature on the map.
+1. Click **Select Segment** and click on the property line on the map.
 2. In the **Plotter** tab, set **Units** to `Meters`.
 3. Choose **🟢 Start Point**.
 4. Set **Cut Point Length** to `15`.
 5. Set **Offset Length** to `5`.
 6. Click **Plot**.
 
-🧮 **Result**: A "Cut Point" is created 15m from the start of the line, and an "Offset Point" is created 5m away from the "Cut Point", perpendicular to the line.
+🧮 **Result**: A "Cut Point" is created 15m from the start of the segment, and an "Offset Point" is created 5m away from the "Cut Point", perpendicular to the segment.
 
 ---
 
