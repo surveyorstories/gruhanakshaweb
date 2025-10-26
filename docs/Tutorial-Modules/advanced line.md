@@ -1,5 +1,5 @@
 ---
-sidebar_position: 2
+sidebar_position: 6
 
 keywords:
   - Line
@@ -7,9 +7,11 @@ keywords:
   - Drawing Circle
   - Circle
   - Drawing Line
+  - Rectangle
+  - Drawing Rectangle
   - gruhanaksha
 
-tags: [line, Advanced Line,Draw Line, Draw Circle, Circle]
+tags: [line, Advanced Line, Draw Line, Draw Circle, Circle, Rectangle]
 slug: advancedline
 ---
 
@@ -40,7 +42,7 @@ The Professional Line Tool is an advanced QGIS plugin that provides enhanced lin
 | **L**      | 📏 **Length/Parameters** | Open parameter dialog for precise length/angle input                |
 | **O**      | 📐 **Ortho Mode**        | Toggle orthogonal drawing (constrains to 45° increments)            |
 | **A**      | 🔒 **Angle Lock**        | Cycle: 90° Lock → 180° Lock → Off (double-tap to cancel)            |
-| **R**      | ⭕ **Circle Mode**        | Toggle between line drawing and circle drawing modes                |
+| **R**      | 🔄 **Shape Mode**        | Cycle: Line → Circle → Rectangle → Line                             |
 | **Q**      | 📊 **Units Cycle**       | Switch between: Meters → Metric Links → Gunter Links → Feet → Yards |
 | **S**      | 🎯 **Snap Toggle**       | Enable/disable snapping to layers and vertices                      |
 | **U**      | ↩️ **Undo Point**        | Remove the last placed point from current line                      |
@@ -88,6 +90,32 @@ Press **R** to enter circle mode.
 2. Press **L** to enter precise radius
 3. Enter radius value and click Apply
 
+### ▭ Rectangle Drawing Mode
+
+`Available from v2.1.0`
+
+Press **R** twice from line mode, or press **R** again from circle mode, to enter rectangle mode.
+
+**Method 1: Freehand Rectangle**
+
+1. Left-click to set first corner
+2. Left-click to set second corner
+3. Left-click to set third corner (determines rectangle shape)
+4. Rectangle is automatically created
+
+**Method 2: Fixed Dimensions**
+
+1. Press **L** to set width and/or height
+2. Left-click to set first corner
+3. Left-click to set rectangle direction and size
+4. Rectangle is automatically created
+
+**Features:**
+
+- 🔒 **Angle Lock**: Press **A** to toggle 90° angle constraints
+- 📏 **Fixed Dimensions**: Use **L** key to set precise width/height
+- 🎯 **Smart Snapping**: Snaps to existing geometry and vertices
+
 ## 🎯 Advanced Features
 
 ### 🔒 Angle Lock System
@@ -95,17 +123,17 @@ Press **R** to enter circle mode.
 Press **A** to cycle through angle lock modes:
 
 1. **First Press**: 🔒 90° Lock
-   
+
    - Constrains lines to 90° increments from previous segment
    - For first segment: locks to cardinal directions (N, E, S, W)
 
 2. **Second Press**: 🔒 180° Lock
-   
+
    - Constrains lines to 180° (parallel/perpendicular)
    - For first segment: locks to N-S or E-W axes
 
 3. **Third Press**: ❌ Cancel Lock
-   
+
    - Returns to free drawing
 
 **Double-tap A**: Quick cancel of current lock
@@ -167,6 +195,12 @@ The tool provides intelligent snapping:
 - 🎯 Only active when QGIS snapping is enabled
 - 🧲 Pink marker indicates snap target
 
+**Custom Segment Snapping:**
+
+- 🟢 Automatically snaps to your drawn line segments
+- 🎯 Only active when QGIS snapping is enabled
+- 🧲 Pink marker indicates snap target
+
 ## 📋 Cursor Information Display
 
 The live cursor info shows:
@@ -217,6 +251,17 @@ The live cursor info shows:
 3. For precise radius: Press L, enter radius value
 4. For visual radius: Move mouse and click at desired edge
 5. Return to line mode: Press R again
+```
+
+### 🏗️ Example 4: Rectangle Drawing
+
+```
+1. Enter rectangle mode: Press R twice
+2. For fixed dimensions: Press L, set width and height
+3. Click first corner of rectangle
+4. Click to set direction and size
+5. Rectangle is automatically created
+6. For freehand: Skip L, click three corners instead
 ```
 
 ## ⚠️ Troubleshooting

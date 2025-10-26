@@ -6,10 +6,16 @@ import HomepageFeatures from "@site/src/components/HomepageFeatures";
 
 import Heading from "@theme/Heading";
 import styles from "./index.module.css";
+import "./index.css";
 
 import Accordion from "../components/faq";
 import WelcomeBlock from "../components/intro_content";
 import FeatureCard from '../components/featurescard';
+
+
+import Hero from '../components/Hero';
+import Features from '../components/Features';
+
 
 
 export default function Home() {
@@ -21,13 +27,10 @@ export default function Home() {
     >
       {/* <HomepageHeader /> */}
       <div className="scroll"></div>
-      <main className="home_main">
-        <section id="welcome">
-          <WelcomeBlock />
-        </section>
 
+      <Hero />
+      <Features />
 
-      </main>
     </Layout>
   );
 }

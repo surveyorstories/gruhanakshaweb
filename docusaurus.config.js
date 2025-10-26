@@ -78,7 +78,7 @@ const config = {
           onUntruncatedBlogPosts: 'warn',
         },
         theme: {
-          customCss: './src/css/custom.css',
+          customCss: ['./src/css/custom.css', './src/css/home.css'],
         },
         sitemap: {
           lastmod: 'date',
@@ -207,8 +207,6 @@ const config = {
       {
         indexPages: true,
         docsRouteBasePath: '/docs',
-        hashed: true,
-        language: ['en'],
         highlightSearchTermsOnTargetPage: false,
         searchResultContextMaxLength: 50,
         searchResultLimits: 8,
@@ -220,7 +218,7 @@ const config = {
   plugins: [
     [
       "@gracefullight/docusaurus-plugin-google-adsense",
-      { adClient: 'pub-5740737782081297' },
+      { adClient: 'ca-pub-5740737782081297' },
     ],
     [
       'posthog-docusaurus',

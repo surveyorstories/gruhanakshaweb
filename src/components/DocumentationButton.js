@@ -5,7 +5,7 @@ const DocumentationButton = () => {
   return (
     <button className="docs-button" role="button">
       <span className="buttons">
-        <Link to="/docs">Documentation</Link>
+        <Link to="/docs">Read Docs</Link>
       </span>
     </button>
   );
