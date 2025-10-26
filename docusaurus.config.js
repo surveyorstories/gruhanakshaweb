@@ -220,7 +220,7 @@ const config = {
   plugins: [
     [
       "@gracefullight/docusaurus-plugin-google-adsense",
-      { adClient: 'pub-5740737782081297' },
+      { adClient: 'ca-pub-5740737782081297' },
     ],
     [
       'posthog-docusaurus',

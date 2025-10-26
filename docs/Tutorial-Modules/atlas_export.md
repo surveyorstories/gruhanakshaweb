@@ -1,5 +1,5 @@
 ---
-sidebar_position: 7
+sidebar_position: 11
 
 keywords:
   - ppm
@@ -28,7 +28,7 @@ The Enhanced Atlas Export Tool allows you to export print layouts and atlas page
 
 ### Prerequisites
 
-- ✅ QGIS 3.x installed
+- ✅ QGIS 3.26 installed
 - ✅ At least one print layout created in your project
 - ✅ For atlas exports: coverage layer configured
 
