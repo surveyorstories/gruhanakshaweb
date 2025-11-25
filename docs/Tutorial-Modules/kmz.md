@@ -49,20 +49,29 @@ Configure export settings for each layer individually:
 
 **Label Display Options:**
 
-- **Show on map**: Labels appear directly on the map in Google Earth
-- **Show in popup only**: Labels appear only when clicking features
-- **Show on map + popup**: Labels appear on map and in popup descriptions
-- **No labels**: No labels are displayed
+- **Map**: Labels appear directly on the map in Google Earth.
+- **Popup Only**: Labels are not on the map but appear in the feature's popup window.
+- **Map + Popup**: Labels appear on the map and are also included at the top of the popup.
+- **None**: No labels are exported for the layer.
 
-**Label Field:**
+**Label Fields (Multi-select):**
 
-- Choose which attribute field to use as the label text
-- If no field is selected, automatic labeling based on layer settings
+- Check one or more fields to combine into a single label.
+- The order of selection does not matter; the fields are joined in their natural order.
+- **Separator**: A character (or characters) to place between the values of the combined fields (default is " | ").
 
 **Label Style:**
 
-- **Size**: Scale factor for label size (0.5x to 3.0x)
-- **Color**: Choose label color using the color picker
+- **Size**: A scale factor to adjust the label size (0.5x to 5.0x).
+- **Color**: The color of the label text.
+
+#### 📝 Description Fields Tab
+
+This tab controls which attribute fields are displayed in the feature's popup description in Google Earth.
+
+- **Field List**: Check the boxes next to the fields you want to include.
+- If **no fields are selected**, all fields will be automatically included in the description.
+- Use the **Select All** and **Select None** buttons to quickly manage your selections.
 
 #### 🎨 Symbology Tab
 
