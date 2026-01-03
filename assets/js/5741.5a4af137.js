@@ -1,1 +1,0 @@
-(globalThis.webpackChunkgruhanakshaweb=globalThis.webpackChunkgruhanakshaweb||[]).push([[5741],{5741:()=>{}}]);
