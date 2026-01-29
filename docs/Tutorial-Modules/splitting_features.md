@@ -8,199 +8,311 @@ slug: splittingfeatures
 `Available from v3.0.0`
 
 :::info
-This tool is built upon the **[Split Features On Steroids](<https://plugins.qgis.org/plugins/SplitPolygonShowingAreas/>)** plugin, featuring enhancements and adaptations tailored to Resurvey requirements.
+This tool is built upon the **[Split Features On Steroids](https://plugins.qgis.org/plugins/SplitPolygonShowingAreas/)** plugin, featuring enhancements and adaptations tailored to Resurvey requirements.
 :::
 
-This guide provides an overview of the Gruhanaksha Polygon Splitter tool. It opens a custom window with an interactive map canvas for splitting polygon features. The tool supports drawing split lines, editing vertices, adjusting areas, adding measurement markers, and more.
+The **Polygon Splitter** provides a dedicated interactive environment for precisely dividing polygon features. It opens a custom window with a map canvas where you can draw split lines, edit vertices, automatically adjust areas to target values, and add measurement markers.
 
-## ✨ Key Features
+---
 
-The Polygon Splitter tool provides an interactive environment for splitting polygon features in QGIS. It opens a dedicated window with a custom map canvas that mirrors the main QGIS canvas.
-
-### 🧩 Main Components
-
-- 🖼️ **Custom Map Canvas**: A separate canvas window for focused editing.
-- 📚 **Layer Selection**: Choose which layers to display in the splitter window.
-- 🎯 **Feature Selection**: Click to select polygon features for splitting.
-- ✏️ **Split Line Drawing**: Draw lines to define split boundaries.
-- 🔧 **Vertex Editing**: Add, remove, and move vertices on the split line.
-- 📐 **Area Adjustment**: Automatically adjust split lines to achieve target areas.
-- 📍 **Measurement Markers**: Add markers for distance measurements.
-- 📏 **Unit Support**: Multiple units for areas and lengths (Acres, Hectares, Sq Meters, etc.).
-- 🧲 **Snapping**: Snap to existing features for precision.
-- ↩️ **Undo/Redo**: Standard editing shortcuts.
-
-## How to Use
+## 🚀 Getting Started
 
 ### Launching the Tool
 
-1. Ensure you have a polygon layer loaded and selected in QGIS.
-2. Use the plugin menu to launch the Polygon Splitter.
-3. A new window titled "Gruhanaksha Polygon Splitter" will open with a custom map canvas.
+1. Load a polygon layer in QGIS.
+2. Select the polygon layer in the Layers panel.
+3. Click the **Polygon Splitter** icon from the Gruhanaksha plugin menu.
+4. A new window titled "Gruhanaksha Polygon Splitter" will open.
 
 ### Interface Overview
 
-The splitter window contains:
+The Polygon Splitter window contains:
 
-- **Map Canvas**: Displays the selected layers and features.
-- **Toolbar**: Buttons for various editing actions.
-- **Unit Selector**: Dropdown to choose area/length units (Acres, Hectares, Sq Meters, etc.).
-- **Layer Selection Button**: Choose which layers to display.
+- **Map Canvas**: Displays your selected layers and features. This mirrors the main QGIS canvas.
+- **Toolbar**: Contains all editing and measurement tools (detailed below).
+- **Unit Selector**: Dropdown menu to choose measurement units for areas and lengths.
+  - **Area Units**: Acres, Hectares, Sq Meters, Sq Feet, Sq Yards, **Guntas**
+  - Linear units are automatically paired with area units (e.g., feet with acres)
+- **Layer Selection Button**: Choose which layers to display in the splitter canvas.
 
-### Toolbar Buttons
+### Changing Measurement Units
 
-- **Select Features**: Click to select polygon features (default mode).
-- **Start Splitting**: Draw split lines on selected features.
-- **Move Vertices**: Drag vertices of the split line.
-- **Add Vertices**: Insert new points on the split line.
-- **Remove Vertices**: Delete points from the split line.
-- **Move Segment**: Adjust individual segments of the split line.
-- **Close/Open Line**: Connect or disconnect the start and end of the split line.
-- **Move Line**: Shift the entire split line.
-- **Adjust Area**: Automatically adjust the split line to achieve target areas.
-- **Add Marker**: Place measurement markers on the map.
-- **Snap Toggle**: Enable/disable snapping to existing features.
-- **Zoom/Pan**: Standard map navigation tools.
+The **Unit Selector** dropdown is located in the toolbar and allows you to change how areas and lengths are displayed.
 
-### Basic Workflow
+**How to Use**:
 
-1. **Select Layers**: Click "Select Layers" to choose which layers to display in the splitter window.
+1. Click the **Unit Selector** dropdown in the toolbar.
+2. Choose your preferred unit from the list:
+   - **Acres** (with feet for linear measurements)
+   - **Hectares** (with meters for linear measurements)
+   - **Sq Meters** (with meters for linear measurements)
+   - **Sq Feet** (with feet for linear measurements)
+   - **Sq Yards** (with yards for linear measurements)
+   - **Guntas** (with feet for linear measurements)
+3. All area and length labels will immediately update to show values in the selected unit.
+4. The unit change applies to:
+   - Real-time area calculations during splitting
+   - Segment length labels
+   - The "Adjust Area" tool target values
+   - Marker distance measurements
 
-2. **Select Features**: Click on polygon features in the canvas to select them for splitting. Hold Ctrl to select multiple features.
+---
 
+## 🛠️ Toolbar Tools - Detailed Guide
+
+| ![arrow](../img/canvas_one/arrow.svg) | **Select Features** |
+|---|---|
+
+**Purpose**: Select polygon features to split.
+
+**How to Use**:
+
+1. Click the **Select Features** button (this is the default tool).
+2. Click on any polygon in the canvas to select it.
+3. Selected features will be highlighted in yellow.
+4. Hold **Ctrl** to select multiple polygons.
+
+| ![cut](../img/canvas_one/cut.svg) | **Start Splitting** |
+|---|---|
+
+**Purpose**: Draw a line across the polygon to define where it will be split.
+
+**How to Use**:
+
+1. Click the **Start Splitting** button.
+2. Click on the map to place the first point of your split line.
+3. Continue clicking to add more points along the desired split path.
+4. As you draw, you'll see:
+   - A **red solid line** showing the drawn portion
+   - A **red dotted line** previewing the next segment
+   - **Area labels** showing the size of each resulting part
+   - **Length labels** on new segments created by the split
+5. **Right-click** or press **Enter** to finish drawing the line.
+6. The split will be performed immediately.
+
+| ![movevertex](../img/canvas_one/movevertex.svg) | **Move Vertices** |
+|---|---|
+
+**Purpose**: Adjust the position of individual points on the split line.
+
+**How to Use**:
+
+1. Draw a split line first (don't finish it yet).
+2. Click the **Move Vertices** button.
+3. Click and drag any vertex (point) on the split line to a new position.
+4. The line will update in real-time, showing new area calculations.
+5. Vertices snap to nearby features if snapping is enabled.
+6. **Right-click** when done to perform the split.
+
+| ![addvertex](../img/canvas_one/addvertex.svg) | **Add Vertices** |
+|---|---|
+
+**Purpose**: Insert new points along the split line for more control.
+
+**How to Use**:
+
+1. Draw a split line with at least 2 points.
+2. Click the **Add Vertices** button.
+3. Click on any **segment** (line between two points) where you want to add a new vertex.
+4. A new point will be inserted at that location.
+5. You can add multiple vertices.
+6. **Right-click** when done to perform the split.
+
+| ![removevertex](../img/canvas_one/removevertex.svg) | **Remove Vertices** |
+|---|---|
+
+**Purpose**: Delete unnecessary points from the split line.
+
+**How to Use**:
+
+1. Draw a split line with at least 3 points.
+2. Click the **Remove Vertices** button.
+3. Click on any **vertex** (point) you want to remove.
+4. The vertex will be deleted and the line will reconnect.
+5. You cannot remove vertices if only 2 points remain.
+6. **Right-click** when done to perform the split.
+
+| ![movesegment](../img/canvas_one/movesegment.svg) | **Move Segment** |
+|---|---|
+
+**Purpose**: Shift an entire segment (line between two points) while keeping it parallel to its original direction.
+
+**How to Use**:
+
+1. Draw a split line with at least 3 points.
+2. Click the **Move Segment** button.
+3. Click and drag on a **segment** (not a vertex).
+4. The segment will move parallel to itself, adjusting the adjacent vertices.
+5. Useful for fine-tuning the split position without changing the angle.
+6. **Right-click** when done to perform the split.
+
+| ![line_close](../img/canvas_one/line_close.svg) | **Close Line** |
+|---|---|
+
+**Purpose**: Connect or disconnect the start and end points of the split line to create a closed loop.
+
+**How to Use**:
+
+- **Close Line**
+  1. Draw a split line with at least 3 points.
+  2. Click **Close Line**.
+  3. The last point will connect to the first point, creating a closed polygon.
+  4. Useful for creating enclosed areas within a polygon.
+
+| ![line_open](../img/canvas_one/line_open.svg) | **Open Line** |
+|---|---|
+
+- **Open Line**
+  1. If you have a closed line, click **Open Line**.
+  2. The connection between start and end will be removed.
+
+| ![moveline](../img/canvas_one/moveline.svg) | **Move Line** |
+|---|---|
+
+**Purpose**: Shift the entire split line to a new position without changing its shape.
+
+**How to Use**:
+
+1. Draw a split line.
+2. Click the **Move Line** button.
+3. Click and drag anywhere on the canvas.
+4. The entire line will move parallel to the drag direction.
+5. All vertices maintain their relative positions.
+6. **Right-click** when done to perform the split.
+
+|  | **Adjust Area** |
+|---|---|
+
+**Purpose**: Automatically adjust the split line to achieve a specific target area for one of the resulting parts.
+
+**How to Use**:
+
+1. Draw a split line across the polygon.
+2. Click the **Adjust Area** button.
+3. A dialog will appear showing the current areas of each part.
+4. **Select the part** you want to adjust (e.g., "Part 1").
+5. **Enter the target area** value (e.g., "20" for 20 Guntas).
+6. Ensure the **Unit Selector** in the toolbar shows the correct unit.
+7. Click **Adjust**.
+8. The tool will automatically shift the split line perpendicular to its direction to match the target area.
+9. The algorithm uses iterative calculations to find the exact position.
+
+**Note**: If the target area is impossible (e.g., larger than the total polygon area), the adjustment will fail with a warning.
+
+|  | **Add Marker** |
+|---|---|
+
+**Purpose**: Place temporary reference markers on the canvas to verify distances and measurements.
+
+**How to Use**:
+
+1. Click the **Add Marker** button.
+2. Click anywhere on the map to place a red square marker.
+3. The marker will snap to the nearest polygon boundary.
+4. As you move the mouse, you'll see distance labels showing:
+   - Distance from the marker to the start of the boundary segment
+   - Distance from the marker to the end of the boundary segment
+5. Place multiple markers to create reference points.
+
+**Editing Markers**:
+
+1. **Right-click** on an existing marker.
+2. The **Edit Marker Distance** dialog will open.
+3. You can:
+   - **Adjust Distance**: Type an exact distance value (e.g., "15.5") to move the marker along the boundary segment.
+   - The two input fields show "Distance from Start" and "Distance from End" - they update automatically as you type.
+   - **Delete Marker**: Click the "Delete Marker" button to remove it.
+
+**Note**: Markers are visual guides only and do not affect the split operation.
+
+| ![snap](../img/canvas_one/snap.svg) | **Snap Toggle** |
+|---|---|
+
+**Purpose**: Enable or disable snapping to existing features.
+
+**How to Use**:
+
+1. Click the **Snap Toggle** button to turn snapping on or off.
+2. When enabled (button appears pressed), vertices and markers will snap to:
+   - Existing polygon vertices
+   - Polygon edges
+   - Other features in the canvas
+3. Configure snapping settings in the main QGIS window for more control.
+
+---
+
+## 📝 Basic Workflow
+
+Here's the typical process for splitting a polygon:
+
+1. **Select Layers**: Click "Select Layers" to choose which layers to display.
+2. **Select Feature**: Click on a polygon to select it (it will highlight in yellow).
 3. **Draw Split Line**:
-   - Click the "Start Splitting" button.
-   - Click on the map to add points to the split line.
-   - The tool shows a red rubber band for the drawn line and a dotted preview for the next segment.
-   - Right-click or press Enter to finish drawing.
+   - Click "Start Splitting"
+   - Click points to draw the line across the polygon
+   - Watch the area labels update in real-time
+4. **Refine (Optional)**:
+   - Use Move/Add/Remove Vertices to perfect the line
+   - Use "Adjust Area" if you need an exact area value
+5. **Perform Split**:
+   - Right-click or press Enter
+   - The polygon will be split into separate features
+6. **Save**: Save your edits in the main QGIS window (Ctrl+S).
 
-4. **Edit Split Line** (optional):
-   - Use vertex editing tools to refine the split line.
-   - Add/remove/move vertices as needed.
-   - Close/open the line if required.
-
-5. **Adjust Areas** (optional):
-   - Click "Adjust Area" to open a dialog.
-   - Select a part and enter the target area.
-   - The tool will automatically adjust the split line to achieve the desired area.
-
-6. **Split Features**:
-   - Right-click on the canvas to perform the split.
-   - The selected features will be split along the drawn line.
-
-### Advanced Features
-
-#### Area and Length Display
-
-As you draw the split line, the tool dynamically displays:
-
-- **Areas**: For each resulting polygon part, shown in the selected unit.
-- **Lengths**: For each segment of the split line, shown in linear units.
-
-#### Measurement Markers
-
-- Click "Add Marker" to place markers on the map.
-- Markers show distances to reference points.
-- Useful for precise measurements during splitting.
-
-#### Snapping
-
-- Toggle snapping on/off with the snap button.
-- When enabled, vertices and markers snap to existing features for precision.
-
-#### Undo/Redo
-
-- **Ctrl + Z**: Undo the last action.
-- **Ctrl + Y**: Redo the last undone action.
-- Also works for layer edits after splitting.
-
-## 🛠️ Toolbar Reference
-
-| **Button/Icon** | **Name** | **Description** |
-| --------------- | -------- | --------------- |
-| ![arrow](../img/canvas_one/arrow.svg) | Select Features | Default mode for selecting polygon features |
-| ![cut](../img/canvas_one/cut.svg) | Start Splitting | Begin drawing split lines |
-| ![movevertex](../img/canvas_one/movevertex.svg) | Move Vertices | Drag vertices of split line |
-| ![addvertex](../img/canvas_one/addvertex.svg) | Add Vertices | Insert new vertices on split line |
-| ![removevertex](../img/canvas_one/removevertex.svg) | Remove Vertices | Delete vertices from split line |
-| ![movesegment](../img/canvas_one/movesegment.svg) | Move Segment | Adjust individual line segments |
-| ![line_close](../img/canvas_one/line_close.svg) | Close Line | Connect start and end points |
-| ![line_open](../img/canvas_one/line_open.svg) | Open Line | Disconnect start and end points |
-| ![moveline](../img/canvas_one/moveline.svg) | Move Line | Shift entire split line |
-|  | Adjust Area | Auto-adjust line for target areas |
-| | Add Marker | Place measurement markers |
-| ![snap](../img/canvas_one/snap.svg) | Snap Toggle | Enable/disable snapping |
-| ![zoomin](../img/canvas_one/zoomin.svg) | Zoom In | Zoom in on canvas |
-| ![zoomout](../img/canvas_one/zoomout.svg) | Zoom Out | Zoom out on canvas |
-| ![pan](../img/canvas_one/pan.svg) | Pan | Pan the map view |
+---
 
 ## ⌨️ Keyboard Shortcuts
 
-| **Shortcut** | **Action** |
-| ------------ | ---------- |
+| Shortcut | Action |
+| --- | --- |
 | **Ctrl + Z** | Undo last action |
 | **Ctrl + Y** | Redo last undone action |
-| **Esc** | Stop current operation |
-| **Backspace/Delete** | Remove last vertex while drawing |
+| **Esc** | Stop current operation / Cancel tool |
 | **Enter** | Finish drawing split line |
-| **Right-click** | Perform split operation |
+| **Right-Click** | Finish drawing line OR Perform split |
+| **Backspace** or **Delete** | Remove last vertex while drawing |
 
-## 💡 Tips for Effective Use
+---
 
-### ⚙️ Configuring Snapping Settings
+## 💡 Best Practices
 
-- Before starting your edits, configure snapping settings for accuracy:
+### Snapping Configuration
 
-  - Open the QGIS snapping toolbar or access snapping options via project settings.
+- Configure snapping settings in QGIS before starting (Settings → Snapping Options).
+- Set an appropriate snapping tolerance (e.g., 10 pixels).
+- Enable snapping to vertices and segments for precision.
+- Use the Snap Toggle in the toolbar to quickly enable/disable snapping.
 
-  - Adjust the snapping tolerance to an appropriate value.
+### Layer Management
 
-  - Enable snapping to vertices or segments as required.
+- Use the "Select Layers" button to show only relevant layers in the splitter window.
+- Lock layers you don't want to edit accidentally.
+- Temporarily hide layers to reduce visual clutter.
 
-  - Set snapping priorities to handle overlapping geometries effectively.
+### Working with Complex Splits
 
-  - The tool allows snapping to existing map points for precision.
+- For complex geometries, work incrementally - split in stages rather than all at once.
+- Use the "Add Marker" tool to verify measurements before finalizing splits.
+- Use "Adjust Area" for precise land parcel divisions where exact areas are required.
+- Save frequently to prevent data loss.
 
-  - These settings enhance accuracy and streamline the workflow.
+### Undo/Redo
 
-  - Utilize the snapping functionality to ensure vertices align with your desired features.
+- Use Ctrl+Z to undo mistakes immediately.
+- The undo/redo functionality works for both drawing operations and completed splits.
+- Undo history is maintained even after performing a split.
 
-### Managing Layers 📂
+---
 
-- When working with multiple layers, consider isolating layers or using layer visibility options to reduce visual clutter.
+## 🌍 Common Use Cases
 
-- Use the **layer lock** feature to avoid accidental edits on other layers.
+- **Land Parcel Division**: Divide large parcels into smaller plots with exact area requirements.
+- **Boundary Adjustments**: Correct or modify existing polygon boundaries.
+- **Resurvey Operations**: Split parcels according to survey measurements using markers for verification.
+- **Property Subdivision**: Create new property boundaries with precise area calculations.
 
-### 🔄 Handling Overlapping Geometries
-
-- Carefully plan your edits to ensure no unintentional overlaps are created.
-
-- Utilize the snapping functionality to align geometries precisely.
-
-- Temporarily hide layers that are not being edited to focus on the target layer.
-
-## ✅ Best Practices
-
-💾 1. **Save Regularly:** Save your edits frequently to prevent accidental data loss.
-
-🔄 2. **Work Incrementally:** For complex geometries, perform edits in smaller, manageable steps.
-
-🧪 3. **Test Changes:** Use the undo/redo functionality to experiment without making permanent changes.
-
-🎯 4. **Snap Strategically:** Ensure snapping settings align with your project needs to maintain precision.
-
-📊 5. **Layer Management:** Use visibility and isolation options to work effectively with overlapping or dense geometries.
-
-## 🌍 Applications
-
-The **Split Features** tool is useful for the following tasks:
-
-- **Land Parcel Division** 🏡: Dividing land parcels into smaller sections for detailed analysis or reporting.
-- **Boundary Adjustments** 📏: Correcting boundaries that need to be split or reshaped based on new data.
-- **Feature Editing** 🛣️: Editing existing geometries, such as roads or infrastructure features, in the map display.
+---
 
 ## 🎉 Conclusion
 
-The **Split Features** tool is an intuitive and powerful tool for interacting with geometries based on their on-screen representation. By allowing users to split features precisely where they are visible in the map canvas, it offers flexibility and accuracy for land parcel divisions, boundary adjustments, and other spatial editing tasks. Whether for dividing large features or making precise corrections, this tool streamlines the process and enhances spatial data editing.
-
-##
+The Polygon Splitter tool provides a powerful, interactive environment for precise polygon division. With real-time area calculations, automatic area adjustment, and comprehensive editing tools, it streamlines complex splitting operations while maintaining accuracy. Whether you're dividing land parcels, adjusting boundaries, or performing detailed resurvey work, this tool offers the flexibility and precision needed for professional GIS editing.
