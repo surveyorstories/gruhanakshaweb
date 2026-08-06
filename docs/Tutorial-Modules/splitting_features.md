@@ -69,7 +69,8 @@ The **Unit Selector** dropdown is located in the toolbar and allows you to chang
 
 1. Click the **Select Features** button (this is the default tool).
 2. Click on any polygon in the canvas to select it.
-3. Selected features will be highlighted in yellow.
+3. Selected features will be highlighted in yellow, and all their vertices will be marked with **black circular indicators**.
+   - *These vertex markers make it easy to see the exact vertices of the polygon and snap your split line directly to them for precision cuts.*
 4. Hold **Ctrl** to select multiple polygons.
 
 | ![cut](../img/canvas_one/cut.svg) | **Start Splitting** |

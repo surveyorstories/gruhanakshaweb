@@ -14,6 +14,9 @@ const config = {
   title: 'Gruhanaksha',
   tagline: 'Gruhanaksha is a plugin for SVAMITVA',
   favicon: 'img/favicon.ico',
+  clientModules: [
+    require.resolve('./src/theme/gtag-stub.js'),
+  ],
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
   future: {

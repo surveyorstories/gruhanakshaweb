@@ -1,8 +1,7 @@
-import React, { useEffect } from "react";
-import Content from "@theme-original/DocItem/Content";
+import React, { useEffect } from 'react';
 
-function AdComponent() {
-  // Show a placeholder in local development mode
+export default function AdUnit({ adSlot }) {
+  // Don't render ads in local development mode to avoid polluting statistics
   if (process.env.NODE_ENV === 'development') {
     return (
       <div style={{
@@ -14,7 +13,7 @@ function AdComponent() {
         color: '#666',
         borderRadius: '8px'
       }}>
-        <strong>[Global AdSense Ad Slot]</strong> (Visible only in production)
+        <strong>[Google AdSense Ad Slot: {adSlot}]</strong> (Visible only in production)
       </div>
     );
   }
@@ -32,19 +31,9 @@ function AdComponent() {
       <ins className="adsbygoogle"
         style={{ display: 'block' }}
         data-ad-client="ca-pub-5740737782081297"
-        data-ad-slot="1234567890" // TODO: Replace with your real ad slot ID
+        data-ad-slot={adSlot}
         data-ad-format="auto"
         data-full-width-responsive="true"></ins>
     </div>
-  );
-}
-
-export default function ContentWrapper(props) {
-  return (
-    <>
-      <AdComponent />
-      <Content {...props} />
-      <AdComponent />
-    </>
   );
 }

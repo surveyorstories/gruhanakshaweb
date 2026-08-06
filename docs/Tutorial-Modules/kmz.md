@@ -77,14 +77,15 @@ This tab controls which attribute fields are displayed in the feature's popup de
 
 **QGIS Symbology:**
 
-- **Use QGIS layer symbology**: Automatically export using current QGIS layer styling
-- **Custom symbology**: Define custom styling for export
+- **Use QGIS layer symbology**: Automatically export using current QGIS layer styling.
+  - *Note: This dynamically supports layers styled with **Categorized Symbology** as well as single symbol renderers.*
+- **Custom symbology**: Define custom styling for export.
 
 **Custom Point Symbology:**
 
-- **Icon**: Choose from predefined pushpin icons (yellow, red, blue, green)
-- **Size**: Scale factor for icon size (0.5x to 3.0x)
-- **Color**: Icon color (when applicable)
+- **Icon**: Choose from predefined pushpin icons (Yellow, Red, Blue, Green) or select **"No Pin"** to export points without visual markers on the Google Earth map.
+- **Size**: Scale factor for icon size (0.5x to 3.0x).
+- **Color**: Icon color (when applicable).
 
 **Custom Line Symbology:**
 
